@@ -1,113 +1,62 @@
-# Express API - JWT Auth Back-End - Setup
 
-## Setup
+<h1 align="center">Tatawwu</h1>
 
-Open your Terminal application and navigate to your projects codespace directory:
+<p align="center">
+  <em>A full-stack MERN Application</em>
+</p>
+---
 
-## Cloning the Auth boilerplate
+## 📖 About the Project
 
-This lecture uses the [Express API JWT Auth Template](https://github.com/Bahrain-SEB-15/DEMO-JWT-EXPRESS-API-TEMPLATE.git) as starter code. The template includes code to authenticate users with JWT tokens.
+**Tatawwu** is a full-stack volunteering  platform built on the **MERN stack**.
 
-Navigate to the [Express API JWT Auth Template](https://github.com/Bahrain-SEB-15/DEMO-JWT-EXPRESS-API-TEMPLATE.git) and clone the repository to your machine:
+The idea behind Tatawwu is simple:It connect localc compaigns with people who want to voulnteering.A single platform specially made for bahraini people,where everyone can see all the available vounteering opporunties in bahrain.
 
-```bash
-git clone https://github.com/Bahrain-SEB-15/DEMO-JWT-EXPRESS-API-TEMPLATE.git
-```
+- 📝 **Arabic langauge** As its for bahrani locals,so the app would have a feature to swtich into arbic langauge.
+- ✏️ **Voulnteer gets Certficate** As soon as voulnteer complete certain no of hours he get certifcate instatntly.
+- ⭐ **Voulnteer badges** Additional feature added for voulnteer leaderboard.the more the do voulnteering,the get badges.
+- 🔍 **Attendence** To keep track for voulnteer who attended the compaign.
 
-Once we have the repository on our machines, we can change the name of the directory to `'express-api-hoot-back-end'`:
+---
+## User Stories
+our project Tatawwu should include functionality for the following roles:
 
-```bash
-mv express-api-jwt-auth-template YOUR_APP_NAME
-```
+## Volunteer
 
-Next, `cd` into your renamed directory:
+- As a guest, I should be able to create an user account.
+- As a Volunteer with an account, I should be able to log in to my account.
+-As a Volunteer,I should able to see all comapigns.
+-As a Volunteer,I should be able to browse/filter comapigns.
+-As a Volunteer,I should be able to register a compaign.
+-As a Volunteer,I should be able to view details for campaign.
+-As a Volunteer,I should be able to share compaign.
+-As a Volunteer,I should be able to to contach compaign owner.
+-As a Volunteer,I should be able to fav compaign.
+-As a Volunteer,I should be able to see my leaderboard.
+-As a Volunteer,I should be able to see my badges.
+-As a Volunteer,I should be able to download certificate.
 
-```bash
-cd YOUR_APP_NAME
-```
+## Organiztaion
+-As a organization ,i should able to create an organization account.
+-As a organization ,i should able to log in to my dahsboardate compaign
+-As a organization ,i should able to create a compaign.
+-As a organization ,i should able to delete a comapign.
+-As a organization ,i should able to mark attendence for volunteer
+-As a organization,i should able to genertae certficate for voulnteer.
+-As a organization,i should able to genertae badge for voulnteer.
 
-Finally, remove the existing `.git` information from this template:
+## Admin
+-As a Admin,i should be able to login.
+-As a Admin,i should be able to see all orgnization and user. 
+-As a Admin,i should be able to verify an orgnaiztion that has registerd.
+-As a Admin,i should be able to verify compaigns made by the orgnaization.
 
-```bash
-rm -rf .git
-```
+## ERD (Entity Relationship Diagram)
 
-> Removing the `.git` info is important as this is just a starter template provided by GA. You do not need the existing git history for this project.
 
-## GitHub setup
+---
+## Wireframes
 
-To add this project to GitHub, initialize a new Git repository:
+---
+## RESTful routes
 
-```bash
-git init
-git add .
-git commit -m "init commit"
-```
-
-Make a new repository on [GitHub](https://github.com/) named `YOUR_APP_NAME`.
-
-Link your local project to your remote GitHub repo:
-
-```bash
-git remote add origin https://github.com/<github-username>/YOUR_APP_NAME.git
-git push origin main
-```
-
-> 🚨 Do not copy the above command. It will not work. Your GitHub username will replace `<github-username>` (including the `<` and `>`) in the URL above. Also replace `YOUR_APP_NAME` with your project name
-
-Open the project's folder in your code editor:
-
-```bash
-code .
-```
-
-## Install dependencies
-
-Next, you will want to install all of the packages listed in `package.json`
-
-```bash
-npm i
-```
-
-## Create your .gitignore
-
-Run the following command in your terminal:
-
-```bash
-touch .gitignore
-```
-
-Once these files are created, add `.env` and `node_modules` to your `.gitignore` file. Doing so will prevent those files and directories from being tracked and we can be confident that any data we add there will not be pushed up to GitHub.
-
-```text
-.env
-node_modules
-```
-
-## Create your .env
-
-Run the following command in your terminal:
-
-```bash
-touch .env
-```
-
-Lastly, we want to add a `MONGODB_URI` and a `JWT_SECRET`.
-
-Add the following secret keys to your application:
-
-```text
-MONGODB_URI=mongodb+srv://<username>:<password>@sei-w0kys.azure.mongodb.net/hoot?retryWrites=true
-JWT_SECRET=supersecret
-SALT_ROUNDS=10
-```
-
-> If you are unsure of where to obtain your MongoDB URI, please refer to the MongoDB Atlas Setup Lab.
-
-Start the application with the following command:
-
-```bash
-npm run dev
-```
-
-Happy Coding!
