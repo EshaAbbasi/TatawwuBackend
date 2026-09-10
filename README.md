@@ -56,6 +56,7 @@ our project Tatawwu should include functionality for the following roles:
 
 ---
 ## Wireframes
+![Wireframes](assets/wireFrames.png)
 
 ---
 ## RESTful routes
