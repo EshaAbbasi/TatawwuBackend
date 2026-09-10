@@ -4,7 +4,7 @@
 <p align="center">
   <em>A full-stack MERN Application</em>
 </p>
----
+
 
 ## 📖 About the Project
 
@@ -23,8 +23,8 @@ our project Tatawwu should include functionality for the following roles:
 
 ## Volunteer
 
-- As a guest, I should be able to create an user account.
-- As a Volunteer with an account, I should be able to log in to my account.
+-As a guest, I should be able to create an user account.
+-As a Volunteer with an account, I should be able to log in to my account.
 -As a Volunteer,I should able to see all comapigns.
 -As a Volunteer,I should be able to browse/filter comapigns.
 -As a Volunteer,I should be able to register a compaign.
