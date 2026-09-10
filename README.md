@@ -10,11 +10,11 @@
 
 **Tatawwu** is a full-stack volunteering  platform built on the **MERN stack**.
 
-The idea behind Tatawwu is simple:It connect localc compaigns with people who want to voulnteering.A single platform specially made for bahraini people,where everyone can see all the available vounteering opporunties in bahrain.
+The idea behind Tatawwu is simple:It connect local compaigns with people who want to voulnteer.A single platform specifically made for bahraini people,where everyone can see all the available vounteering opporunties in bahrain.
 
-- 📝 **Arabic langauge** As its for bahrani locals,so the app would have a feature to swtich into arbic langauge.
+- 📝 **Arabic langauge** As its for bahrani locals,so the app would have a feature to swtich into Arabic langauge.
 - ✏️ **Voulnteer gets Certficate** As soon as voulnteer complete certain no of hours he get certifcate instatntly.
-- ⭐ **Voulnteer badges** Additional feature added for voulnteer leaderboard.the more the do voulnteering,the get badges.
+- ⭐ **Voulnteer badges** Additional feature added for voulnteer leaderboard.the more they do voulnteering,they get badges.
 - 🔍 **Attendence** To keep track for voulnteer who attended the compaign.
 
 ---
