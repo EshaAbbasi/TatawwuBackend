@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2700" height="1940" viewBox="0 0 2700 1940">
+<title>Tatawwu Bahrain — project design specification</title>
+<rect width="100%" height="100%" fill="#151a20"/>
+<rect x="65" y="60" width="10" height="56" rx="0" fill="#ff6b3d" stroke="none" stroke-width="1"/>
+<text x="96.00" y="101.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="42" font-weight="700" fill="#f1f5f6">Frontend routes / React Router</text>
+<text x="98.00" y="148.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#b6c2c9">15 URL patterns · 14 page components · Campaign creation and editing share one page</text>
+<text x="2596.60" y="91.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" fill="#b6c2c9">06</text>
+<polyline points="70,1878 2630,1878" fill="none" stroke="#3f5059" stroke-width="1" stroke-linejoin="round"/>
+<text x="70.00" y="1910.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#b6c2c9">TATAWWU&#x27;  /  BAHRAIN  /  ENGLISH  /  MERN + JWT + CLOUDINARY</text>
+<text x="2352.36" y="1910.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#b6c2c9">DESIGN SPECIFICATION · 12 SEP 2026</text>
+<rect x="70" y="225" width="810" height="62" rx="0" fill="#25313b" stroke="#53616c" stroke-width="1"/>
+<text x="88.00" y="265.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#f4f7f8">URL path</text>
+<rect x="880" y="225" width="610" height="62" rx="0" fill="#25313b" stroke="#53616c" stroke-width="1"/>
+<text x="898.00" y="265.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#f4f7f8">Page component</text>
+<rect x="1490" y="225" width="260" height="62" rx="0" fill="#25313b" stroke="#53616c" stroke-width="1"/>
+<text x="1508.00" y="265.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#f4f7f8">Access</text>
+<rect x="1750" y="225" width="880" height="62" rx="0" fill="#25313b" stroke="#53616c" stroke-width="1"/>
+<text x="1768.00" y="265.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#f4f7f8">Page purpose</text>
+<rect x="70" y="287" width="810" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="87.00" y="327.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">/</text>
+<rect x="880" y="287" width="610" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="897.00" y="327.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">ExplorePage</text>
+<rect x="1490" y="287" width="260" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="1507.00" y="327.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Public</text>
+<rect x="1750" y="287" width="880" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="1767.00" y="327.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Discover activities; filter by governorate, area, category and Bahrain dates.</text>
+<rect x="70" y="376" width="810" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="87.00" y="416.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">/campaigns/:id</text>
+<rect x="880" y="376" width="610" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="897.00" y="416.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">CampaignDetailsPage</text>
+<rect x="1490" y="376" width="260" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="1507.00" y="416.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Visibility rules</text>
+<rect x="1750" y="376" width="880" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="1767.00" y="416.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">View, save or share activity; register/cancel when allowed.</text>
+<rect x="70" y="465" width="810" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="87.00" y="505.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">/organizations/:id</text>
+<rect x="880" y="465" width="610" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="897.00" y="505.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">OrganizationDetailsPage</text>
+<rect x="1490" y="465" width="260" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="1507.00" y="505.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Public</text>
+<rect x="1750" y="465" width="880" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="1767.00" y="505.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">View approved organization, public contacts and campaigns.</text>
+<rect x="70" y="554" width="810" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="87.00" y="594.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">/sign-up</text>
+<rect x="880" y="554" width="610" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="897.00" y="594.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">SignupPage</text>
+<rect x="1490" y="554" width="260" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="1507.00" y="594.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Guest</text>
+<rect x="1750" y="554" width="880" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="1767.00" y="594.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Create a volunteer or organizer account.</text>
+<rect x="70" y="643" width="810" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="87.00" y="683.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">/sign-in</text>
+<rect x="880" y="643" width="610" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="897.00" y="683.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">LoginPage</text>
+<rect x="1490" y="643" width="260" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="1507.00" y="683.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Guest</text>
+<rect x="1750" y="643" width="880" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="1767.00" y="683.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Sign in with username and password.</text>
+<rect x="70" y="732" width="810" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="87.00" y="772.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">/profile</text>
+<rect x="880" y="732" width="610" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="897.00" y="772.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">ProfilePage</text>
+<rect x="1490" y="732" width="260" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="1507.00" y="772.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Signed in</text>
+<rect x="1750" y="732" width="880" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="1767.00" y="772.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Edit name and optional city.</text>
+<rect x="70" y="821" width="810" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="87.00" y="861.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">/my/registrations</text>
+<rect x="880" y="821" width="610" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="897.00" y="861.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">MyActivitiesPage</text>
+<rect x="1490" y="821" width="260" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="1507.00" y="861.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Volunteer</text>
+<rect x="1750" y="821" width="880" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="1767.00" y="861.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">View upcoming/past activities and attendance.</text>
+<rect x="70" y="910" width="810" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="87.00" y="950.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">/my/favorites</text>
+<rect x="880" y="910" width="610" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="897.00" y="950.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">FavoritesPage</text>
+<rect x="1490" y="910" width="260" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="1507.00" y="950.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Volunteer</text>
+<rect x="1750" y="910" width="880" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="1767.00" y="950.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Browse saved visible campaigns; remove favorites.</text>
+<rect x="70" y="999" width="810" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="87.00" y="1039.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">/my/certificates</text>
+<rect x="880" y="999" width="610" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="897.00" y="1039.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">MyCertificatesPage</text>
+<rect x="1490" y="999" width="260" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="1507.00" y="1039.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Volunteer</text>
+<rect x="1750" y="999" width="880" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="1767.00" y="1039.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Preview and download own issued certificates.</text>
+<rect x="70" y="1088" width="810" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="87.00" y="1128.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">/organizer/organization</text>
+<rect x="880" y="1088" width="610" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="897.00" y="1128.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">OrganizationSettingsPage</text>
+<rect x="1490" y="1088" width="260" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="1507.00" y="1128.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Organizer</text>
+<rect x="1750" y="1088" width="880" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="1767.00" y="1128.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Create/edit organization information and logo.</text>
+<rect x="70" y="1177" width="810" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="87.00" y="1217.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">/organizer/campaigns</text>
+<rect x="880" y="1177" width="610" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="897.00" y="1217.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">OrganizerDashboard</text>
+<rect x="1490" y="1177" width="260" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="1507.00" y="1217.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Organizer</text>
+<rect x="1750" y="1177" width="880" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="1767.00" y="1217.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Manage own campaigns and view approval states.</text>
+<rect x="70" y="1266" width="810" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="87.00" y="1306.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">/organizer/campaigns/new</text>
+<rect x="880" y="1266" width="610" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="897.00" y="1306.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">CampaignEditorPage</text>
+<rect x="1490" y="1266" width="260" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="1507.00" y="1306.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Organizer</text>
+<rect x="1750" y="1266" width="880" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="1767.00" y="1306.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Create a campaign draft and optional cover image.</text>
+<rect x="70" y="1355" width="810" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="87.00" y="1395.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">/organizer/campaigns/:id/edit</text>
+<rect x="880" y="1355" width="610" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="897.00" y="1395.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">CampaignEditorPage</text>
+<rect x="1490" y="1355" width="260" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="1507.00" y="1395.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Owner</text>
+<rect x="1750" y="1355" width="880" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="1767.00" y="1395.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Edit an eligible campaign and its cover image.</text>
+<rect x="70" y="1444" width="810" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="87.00" y="1484.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">/organizer/campaigns/:id/participants</text>
+<rect x="880" y="1444" width="610" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="897.00" y="1484.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">ParticipantsPage</text>
+<rect x="1490" y="1444" width="260" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="1507.00" y="1484.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Owner</text>
+<rect x="1750" y="1444" width="880" height="89" rx="0" fill="#202b34" stroke="#53616c" stroke-width="1"/>
+<text x="1767.00" y="1484.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Record attendance, complete activity, grant certificates.</text>
+<rect x="70" y="1533" width="810" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="87.00" y="1573.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">/admin</text>
+<rect x="880" y="1533" width="610" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="897.00" y="1573.00" font-family="DejaVu Sans Mono, monospace" font-size="22" font-weight="400" fill="#edf2f5">AdminDashboard</text>
+<rect x="1490" y="1533" width="260" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="1507.00" y="1573.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Admin</text>
+<rect x="1750" y="1533" width="880" height="89" rx="0" fill="#1c242c" stroke="#53616c" stroke-width="1"/>
+<text x="1767.00" y="1573.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#edf2f5">Review organizations/campaigns and remove inappropriate listings.</text>
+<text x="80.00" y="1721.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#bdcbd4">Owner = organizer owning the associated organization. Route guards support navigation; Express enforces all permissions.</text>
+<text x="80.00" y="1765.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#bdcbd4">Public discovery: approved upcoming campaigns from approved Bahrain organizations. Historical detail access follows visibility rules.</text>
+<text x="80.00" y="1809.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#bdcbd4">All times display in Asia/Bahrain (UTC+3). Country is fixed to BH. Cloudinary certificate URLs never become frontend routes.</text>
+</svg>

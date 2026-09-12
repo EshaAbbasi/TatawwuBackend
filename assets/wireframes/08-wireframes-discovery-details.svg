@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3100" height="1690" viewBox="0 0 3100 1690">
+<title>Tatawwu Bahrain — project design specification</title>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<rect x="65" y="60" width="10" height="56" rx="0" fill="#ff6b3d" stroke="none" stroke-width="1"/>
+<text x="96.00" y="101.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="42" font-weight="700" fill="#17242b">Wireframes / discover &amp; join</text>
+<text x="98.00" y="148.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#52636b">Desktop layouts · Illustrative campaign and organization names · English interface</text>
+<text x="2996.60" y="91.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" fill="#52636b">08</text>
+<polyline points="70,1628 3030,1628" fill="none" stroke="#c8d2d7" stroke-width="1" stroke-linejoin="round"/>
+<text x="70.00" y="1660.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#52636b">TATAWWU&#x27;  /  BAHRAIN  /  ENGLISH  /  MERN + JWT + CLOUDINARY</text>
+<text x="2752.36" y="1660.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#52636b">DESIGN SPECIFICATION · 12 SEP 2026</text>
+<text x="70.00" y="231.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" fill="#17242b">Explore activities</text>
+<text x="70.00" y="264.00" font-family="DejaVu Sans Mono, monospace" font-size="19" font-weight="400" fill="#60717a">/</text>
+<rect x="70" y="280" width="1440" height="1000" rx="6" fill="#ffffff" stroke="#829299" stroke-width="2"/>
+<rect x="70" y="280" width="1440" height="76" rx="0" fill="#f3f6f7" stroke="#829299" stroke-width="1"/>
+<text x="96.00" y="328.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" fill="#223038">Tatawwu&#x27;</text>
+<text x="1142.38" y="326.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#223038">Explore Bahrain     Sign in     Sign up</text>
+<text x="105.00" y="429.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="36" font-weight="700" fill="#223038">Volunteer in Bahrain.</text>
+<text x="105.00" y="471.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#60717a">Find a local activity and make time for your community.</text>
+<text x="105.00" y="527.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Search activities</text>
+<rect x="105" y="539" width="1070" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="119.00" y="570.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Search by activity or organization</text>
+<rect x="1200" y="539" width="270" height="52" rx="4" fill="#d6eee3" stroke="#829299" stroke-width="1.3"/>
+<text x="1298.87" y="570.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Search</text>
+<text x="105.00" y="643.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Governorate</text>
+<rect x="105" y="655" width="290" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="119.00" y="686.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">All governorates v</text>
+<text x="416.00" y="643.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Area</text>
+<rect x="416" y="655" width="300" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="430.00" y="686.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Area name</text>
+<text x="737.00" y="643.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Category</text>
+<rect x="737" y="655" width="270" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="751.00" y="686.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">All categories v</text>
+<text x="1028.00" y="643.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">From date</text>
+<rect x="1028" y="655" width="208" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1042.00" y="686.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">dd / mm / yyyy</text>
+<text x="1257.00" y="643.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">To date</text>
+<rect x="1257" y="655" width="213" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1271.00" y="686.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">dd / mm / yyyy</text>
+<text x="106.00" y="758.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="26" font-weight="700" fill="#223038">Upcoming activities</text>
+<text x="1356.07" y="757.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#223038">Clear filters</text>
+<rect x="105" y="787" width="665" height="379" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<rect x="121" y="803" width="633" height="132" rx="4" fill="#edf1f2" stroke="#a4b1b7" stroke-width="1.3"/>
+<polyline points="121,803 754,935" fill="none" stroke="#c9d2d6" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="754,803 121,935" fill="none" stroke="#c9d2d6" stroke-width="1" stroke-linejoin="round"/>
+<rect x="351.171875" y="852.0" width="172.65625" height="37" rx="0" fill="#edf1f2" stroke="none" stroke-width="1"/>
+<text x="361.17" y="875.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Campaign cover</text>
+<text x="127.00" y="983.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="26" font-weight="700" fill="#223038">Community Cleanup</text>
+<text x="127.00" y="1020.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Example Volunteer Group</text>
+<text x="127.00" y="1056.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#223038">Manama · Capital · Bahrain</text>
+<text x="127.00" y="1087.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#223038">19 Sep 2026 · 9:00–11:00 AM Bahrain time</text>
+<text x="127.00" y="1139.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#223038">12 places available</text>
+<rect x="526" y="1104" width="218" height="52" rx="4" fill="#d6eee3" stroke="#829299" stroke-width="1.3"/>
+<text x="567.22" y="1135.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">View activity</text>
+<rect x="805" y="787" width="665" height="379" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<rect x="821" y="803" width="633" height="132" rx="4" fill="#edf1f2" stroke="#a4b1b7" stroke-width="1.3"/>
+<polyline points="821,803 1454,935" fill="none" stroke="#c9d2d6" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="1454,803 821,935" fill="none" stroke="#c9d2d6" stroke-width="1" stroke-linejoin="round"/>
+<rect x="1051.171875" y="852.0" width="172.65625" height="37" rx="0" fill="#edf1f2" stroke="none" stroke-width="1"/>
+<text x="1061.17" y="875.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Campaign cover</text>
+<text x="827.00" y="983.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="26" font-weight="700" fill="#223038">Food Packing</text>
+<text x="827.00" y="1020.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Example Volunteer Group</text>
+<text x="827.00" y="1056.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#223038">Riffa · Southern · Bahrain</text>
+<text x="827.00" y="1087.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#223038">20 Sep 2026 · 4:00–6:00 PM Bahrain time</text>
+<text x="827.00" y="1139.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#223038">12 places available</text>
+<rect x="1226" y="1104" width="218" height="52" rx="4" fill="#d6eee3" stroke="#829299" stroke-width="1.3"/>
+<text x="1267.22" y="1135.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">View activity</text>
+<rect x="559" y="1201" width="145" height="45" rx="4" fill="#edf1f3" stroke="#c0cbd0" stroke-width="1.3"/>
+<text x="585.83" y="1228.96" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#8a979e">Previous</text>
+<text x="779.00" y="1231.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#223038">1</text>
+<rect x="854" y="1201" width="145" height="45" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="901.88" y="1228.96" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Next</text>
+<text x="1590.00" y="231.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" fill="#17242b">Campaign details</text>
+<text x="1590.00" y="264.00" font-family="DejaVu Sans Mono, monospace" font-size="19" font-weight="400" fill="#60717a">/campaigns/:id</text>
+<rect x="1590" y="280" width="1440" height="1000" rx="6" fill="#ffffff" stroke="#829299" stroke-width="2"/>
+<rect x="1590" y="280" width="1440" height="76" rx="0" fill="#f3f6f7" stroke="#829299" stroke-width="1"/>
+<text x="1616.00" y="328.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" fill="#223038">Tatawwu&#x27;</text>
+<text x="2341.88" y="326.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#223038">Explore     Favorites     My activities     Certificates     Profile     Sign out</text>
+<rect x="1625" y="386" width="1370" height="225" rx="4" fill="#edf1f2" stroke="#a4b1b7" stroke-width="1.3"/>
+<polyline points="1625,386 2995,611" fill="none" stroke="#c9d2d6" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="2995,386 1625,611" fill="none" stroke="#c9d2d6" stroke-width="1" stroke-linejoin="round"/>
+<rect x="2223.671875" y="481.5" width="172.65625" height="37" rx="0" fill="#edf1f2" stroke="none" stroke-width="1"/>
+<text x="2233.67" y="504.50" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Campaign cover</text>
+<text x="1625.00" y="676.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="700" fill="#223038">Community Cleanup</text>
+<rect x="2775" y="647" width="220" height="36" rx="4" fill="#f3f6f7" stroke="#b9c6cc" stroke-width="1.3"/>
+<text x="2787.00" y="670.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#223038">Environment</text>
+<rect x="1625" y="701" width="78" height="65" rx="4" fill="#edf1f2" stroke="#a4b1b7" stroke-width="1.3"/>
+<polyline points="1625,701 1703,766" fill="none" stroke="#c9d2d6" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="1703,701 1625,766" fill="none" stroke="#c9d2d6" stroke-width="1" stroke-linejoin="round"/>
+<rect x="1634.8125" y="716.5" width="58.375" height="37" rx="0" fill="#edf1f2" stroke="none" stroke-width="1"/>
+<text x="1644.81" y="736.50" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="400" fill="#60717a">Logo</text>
+<text x="1725.00" y="727.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#223038">Example Volunteer Group</text>
+<text x="1725.00" y="760.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">View organization</text>
+<text x="1625.00" y="843.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="25" font-weight="700" fill="#223038">About this activity</text>
+<text x="1625.00" y="884.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#223038">Help collect litter and sort recyclable materials with a local volunteer</text>
+<text x="1625.00" y="911.72" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#223038">team. Equipment and a short briefing are provided.</text>
+<text x="1625.00" y="1012.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="25" font-weight="700" fill="#223038">Volunteer responsibilities</text>
+<text x="1625.00" y="1053.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#223038">Arrive on time, follow the organizer’s briefing, and work with your</text>
+<text x="1625.00" y="1080.72" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#223038">assigned team.</text>
+<rect x="1625" y="1145" width="300" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1685.19" y="1176.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Save to favorites</text>
+<rect x="1947" y="1145" width="290" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="2000.91" y="1176.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Copy activity link</text>
+<rect x="1625" y="1219" width="218" height="40" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1635.67" y="1244.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Email organization</text>
+<rect x="1860" y="1219" width="218" height="40" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1879.92" y="1244.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Call organization</text>
+<rect x="2095" y="1219" width="275" height="40" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="2109.11" y="1244.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">WhatsApp organization</text>
+<rect x="2480" y="818" width="515" height="414" rx="4" fill="#f3f6f7" stroke="#829299" stroke-width="1.3"/>
+<text x="2503.00" y="864.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" fill="#223038">Activity information</text>
+<text x="2503.00" y="918.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#223038">19 September 2026</text>
+<text x="2503.00" y="956.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#223038">9:00–11:00 AM · Bahrain time</text>
+<text x="2503.00" y="1008.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#223038">Manama · Capital · Bahrain</text>
+<text x="2503.00" y="1047.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#223038">Venue and full meeting address</text>
+<text x="2503.00" y="1110.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#223038">12 of 30 places available</text>
+<rect x="2503" y="1152" width="468" height="52" rx="4" fill="#d6eee3" stroke="#829299" stroke-width="1.3"/>
+<text x="2631.76" y="1183.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Register for activity</text>
+<rect x="70" y="1360" width="1440" height="96.0" rx="7" fill="#f1f5f6" stroke="#c4cfd4" stroke-width="1"/>
+<text x="90.00" y="1401.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#17242b">FLOW &amp; ACCESS</text>
+<text x="90.00" y="1440.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">Browse → activity details → register. Guests are sent to sign in; volunteers can join immediately when the activity is open and has capacity.</text>
+<rect x="1590" y="1360" width="1440" height="124.0" rx="7" fill="#f1f5f6" stroke="#c4cfd4" stroke-width="1"/>
+<text x="1610.00" y="1401.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#17242b">IMPORTANT STATES</text>
+<text x="1610.00" y="1440.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">Registration changes to Registered / Cancel, Full, Closed, Pending review, Cancelled, or Removed. Favorites toggle to Remove; sharing</text>
+<text x="1610.00" y="1468.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">confirms Link copied. Contact links open external tools; hide missing optional numbers.</text>
+</svg>

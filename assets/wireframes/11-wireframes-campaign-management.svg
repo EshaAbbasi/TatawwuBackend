@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3100" height="1810" viewBox="0 0 3100 1810">
+<title>Tatawwu Bahrain — project design specification</title>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<rect x="65" y="60" width="10" height="56" rx="0" fill="#ff6b3d" stroke="none" stroke-width="1"/>
+<text x="96.00" y="101.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="42" font-weight="700" fill="#17242b">Wireframes / manage campaigns</text>
+<text x="98.00" y="148.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#52636b">Campaign dashboard plus shared create/edit form · Bahrain location and time are fixed</text>
+<text x="2996.60" y="91.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" fill="#52636b">11</text>
+<polyline points="70,1748 3030,1748" fill="none" stroke="#c8d2d7" stroke-width="1" stroke-linejoin="round"/>
+<text x="70.00" y="1780.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#52636b">TATAWWU&#x27;  /  BAHRAIN  /  ENGLISH  /  MERN + JWT + CLOUDINARY</text>
+<text x="2752.36" y="1780.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#52636b">DESIGN SPECIFICATION · 12 SEP 2026</text>
+<text x="70.00" y="231.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" fill="#17242b">Organizer dashboard</text>
+<text x="70.00" y="264.00" font-family="DejaVu Sans Mono, monospace" font-size="19" font-weight="400" fill="#60717a">/organizer/campaigns</text>
+<rect x="70" y="280" width="1440" height="1120" rx="6" fill="#ffffff" stroke="#829299" stroke-width="2"/>
+<rect x="70" y="280" width="1440" height="76" rx="0" fill="#f3f6f7" stroke="#829299" stroke-width="1"/>
+<text x="96.00" y="328.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" fill="#223038">Tatawwu&#x27;</text>
+<text x="975.58" y="326.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#223038">My campaigns     My organization     Profile     Sign out</text>
+<text x="105.00" y="428.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="700" fill="#223038">My campaigns</text>
+<rect x="1140" y="389" width="335" height="52" rx="4" fill="#d6eee3" stroke="#829299" stroke-width="1.3"/>
+<text x="1218.32" y="420.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Create campaign</text>
+<text x="105.00" y="503.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Filter by status</text>
+<rect x="105" y="515" width="410" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="119.00" y="546.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">All statuses v</text>
+<text x="547.00" y="547.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#223038">Organization: Approved</text>
+<rect x="105" y="615" width="440" height="60" rx="4" fill="#f3f6f7" stroke="#829299" stroke-width="1.3"/>
+<text x="119.00" y="653.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#223038">Campaign</text>
+<rect x="545" y="615" width="235" height="60" rx="4" fill="#f3f6f7" stroke="#829299" stroke-width="1.3"/>
+<text x="559.00" y="653.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#223038">Status</text>
+<rect x="780" y="615" width="150" height="60" rx="4" fill="#f3f6f7" stroke="#829299" stroke-width="1.3"/>
+<text x="794.00" y="653.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#223038">Places</text>
+<rect x="930" y="615" width="545" height="60" rx="4" fill="#f3f6f7" stroke="#829299" stroke-width="1.3"/>
+<text x="944.00" y="653.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#223038">Actions</text>
+<rect x="105" y="675" width="440" height="161" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<rect x="545" y="675" width="235" height="161" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<rect x="780" y="675" width="150" height="161" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<rect x="930" y="675" width="545" height="161" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="119.00" y="723.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#223038">Community Cleanup</text>
+<text x="119.00" y="769.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Area · Governorate · Date</text>
+<rect x="559" y="701" width="200" height="36" rx="4" fill="#f3f6f7" stroke="#b9c6cc" stroke-width="1.3"/>
+<text x="571.00" y="724.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#223038">Approved</text>
+<text x="795.00" y="733.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#223038">18 / 30</text>
+<rect x="948" y="694" width="145" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="999.78" y="725.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Edit</text>
+<rect x="1110" y="694" width="344" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1218.47" y="725.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Participants</text>
+<rect x="948" y="764" width="145" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="985.65" y="795.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Cancel</text>
+<rect x="105" y="836" width="440" height="161" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<rect x="545" y="836" width="235" height="161" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<rect x="780" y="836" width="150" height="161" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<rect x="930" y="836" width="545" height="161" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="119.00" y="884.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#223038">School Support</text>
+<text x="119.00" y="930.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Area · Governorate · Date</text>
+<rect x="559" y="862" width="200" height="36" rx="4" fill="#f3f6f7" stroke="#b9c6cc" stroke-width="1.3"/>
+<text x="571.00" y="885.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#223038">Draft</text>
+<text x="795.00" y="894.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#223038">0 / 20</text>
+<rect x="948" y="864" width="238" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1046.28" y="895.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Edit</text>
+<rect x="1202" y="864" width="252" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1293.60" y="895.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Delete</text>
+<rect x="105" y="997" width="440" height="161" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<rect x="545" y="997" width="235" height="161" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<rect x="780" y="997" width="150" height="161" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<rect x="930" y="997" width="545" height="161" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="119.00" y="1045.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#223038">Food Packing</text>
+<text x="119.00" y="1091.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Area · Governorate · Date</text>
+<rect x="559" y="1023" width="200" height="36" rx="4" fill="#f3f6f7" stroke="#b9c6cc" stroke-width="1.3"/>
+<text x="571.00" y="1046.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#223038">Rejected</text>
+<text x="795.00" y="1055.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#223038">0 / 15</text>
+<rect x="948" y="1025" width="238" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1016.95" y="1056.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Feedback</text>
+<rect x="1202" y="1025" width="252" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1307.28" y="1056.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Edit</text>
+<rect x="105" y="1219" width="1370" height="58" rx="4" fill="#f3f6f7" stroke="#c0cbd0" stroke-width="1.3"/>
+<text x="120.00" y="1251.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#223038">Only actions allowed for the current campaign status are available.</text>
+<text x="1590.00" y="231.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" fill="#17242b">Create / edit campaign</text>
+<text x="1590.00" y="264.00" font-family="DejaVu Sans Mono, monospace" font-size="19" font-weight="400" fill="#60717a">/organizer/campaigns/new · /organizer/campaigns/:id/edit</text>
+<rect x="1590" y="280" width="1440" height="1120" rx="6" fill="#ffffff" stroke="#829299" stroke-width="2"/>
+<rect x="1590" y="280" width="1440" height="76" rx="0" fill="#f3f6f7" stroke="#829299" stroke-width="1"/>
+<text x="1616.00" y="328.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" fill="#223038">Tatawwu&#x27;</text>
+<text x="2495.58" y="326.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#223038">My campaigns     My organization     Profile     Sign out</text>
+<text x="1625.00" y="420.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="32" font-weight="700" fill="#223038">Edit draft campaign</text>
+<rect x="1625" y="453" width="240" height="127" rx="4" fill="#edf1f2" stroke="#a4b1b7" stroke-width="1.3"/>
+<polyline points="1625,453 1865,580" fill="none" stroke="#c9d2d6" stroke-width="1" stroke-linejoin="round"/>
+<polyline points="1865,453 1625,580" fill="none" stroke="#c9d2d6" stroke-width="1" stroke-linejoin="round"/>
+<rect x="1667.890625" y="499.5" width="154.21875" height="37" rx="0" fill="#edf1f2" stroke="none" stroke-width="1"/>
+<text x="1677.89" y="522.50" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Cover preview</text>
+<rect x="1900" y="455" width="275" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1967.09" y="486.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Choose cover</text>
+<rect x="2200" y="455" width="180" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="2247.94" y="486.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Remove</text>
+<text x="1900.00" y="550.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#60717a">Optional · JPG, PNG or WebP · up to 5 MB</text>
+<text x="1625.00" y="631.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Title</text>
+<rect x="1625" y="643" width="910" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1639.00" y="674.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Community Cleanup</text>
+<text x="2565.00" y="631.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Category</text>
+<rect x="2565" y="643" width="430" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="2579.00" y="674.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Environment v</text>
+<text x="1625.00" y="737.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Description and volunteer responsibilities</text>
+<rect x="1625" y="749" width="1370" height="84" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1639.00" y="780.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Help collect litter and sort recyclables. Follow the team briefing; equipment is provided.</text>
+<text x="1625.00" y="876.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="700" fill="#223038">Country: Bahrain</text>
+<text x="1625.00" y="921.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Governorate</text>
+<rect x="1625" y="933" width="665" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1639.00" y="964.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Capital v</text>
+<text x="2325.00" y="921.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Area</text>
+<rect x="2325" y="933" width="670" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="2339.00" y="964.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Manama</text>
+<text x="1625.00" y="1027.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Venue</text>
+<rect x="1625" y="1039" width="465" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1639.00" y="1070.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Meeting point name</text>
+<text x="2120.00" y="1027.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Full address</text>
+<rect x="2120" y="1039" width="875" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="2134.00" y="1070.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Road / block / building or clear meeting instructions</text>
+<text x="1625.00" y="1133.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Start date and time</text>
+<rect x="1625" y="1145" width="440" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1639.00" y="1176.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">19 Sep 2026 · 09:00</text>
+<text x="2090.00" y="1133.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">End date and time</text>
+<rect x="2090" y="1145" width="440" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="2104.00" y="1176.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">19 Sep 2026 · 11:00</text>
+<text x="2555.00" y="1133.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Capacity</text>
+<rect x="2555" y="1145" width="440" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="2569.00" y="1176.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">30</text>
+<text x="1625.00" y="1240.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#60717a">All activity times are Bahrain time (UTC+3).</text>
+<rect x="1625" y="1289" width="260" height="52" rx="4" fill="#d6eee3" stroke="#829299" stroke-width="1.3"/>
+<text x="1682.63" y="1320.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Save changes</text>
+<rect x="1909" y="1289" width="410" height="52" rx="4" fill="#edf1f3" stroke="#c0cbd0" stroke-width="1.3"/>
+<text x="2008.73" y="1320.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#8a979e">Submit for approval</text>
+<rect x="2342" y="1289" width="170" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="2401.85" y="1320.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Back</text>
+<rect x="70" y="1480" width="1440" height="124.0" rx="7" fill="#f1f5f6" stroke="#c4cfd4" stroke-width="1"/>
+<text x="90.00" y="1521.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#17242b">FLOW &amp; ACCESS</text>
+<text x="90.00" y="1560.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">Create uses an empty form; edit is prefilled with the selected campaign, as shown. Only the owner sees create/edit/delete controls. Save</text>
+<text x="90.00" y="1588.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">changes before submitting; submission requires an approved organization.</text>
+<rect x="1590" y="1480" width="1440" height="124.0" rx="7" fill="#f1f5f6" stroke="#c4cfd4" stroke-width="1"/>
+<text x="1610.00" y="1521.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#17242b">IMPORTANT STATES</text>
+<text x="1610.00" y="1560.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">Approved campaign edits trigger another review and retain registrations. Editing closes at the activity start. Confirm deletion or</text>
+<text x="1610.00" y="1588.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">cancellation; delete only eligible never-published campaigns. Rejected drafts can be edited and resubmitted.</text>
+</svg>
