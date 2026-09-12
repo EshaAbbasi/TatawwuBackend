@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3100" height="1810" viewBox="0 0 3100 1810">
+<title>Tatawwu Bahrain — project design specification</title>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<rect x="65" y="60" width="10" height="56" rx="0" fill="#ff6b3d" stroke="none" stroke-width="1"/>
+<text x="96.00" y="101.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="42" font-weight="700" fill="#17242b">Wireframes / accounts</text>
+<text x="98.00" y="148.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#52636b">Signup, login and account profile · Roles are fixed after signup</text>
+<text x="2996.60" y="91.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" fill="#52636b">09</text>
+<polyline points="70,1748 3030,1748" fill="none" stroke="#c8d2d7" stroke-width="1" stroke-linejoin="round"/>
+<text x="70.00" y="1780.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#52636b">TATAWWU&#x27;  /  BAHRAIN  /  ENGLISH  /  MERN + JWT + CLOUDINARY</text>
+<text x="2752.36" y="1780.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#52636b">DESIGN SPECIFICATION · 12 SEP 2026</text>
+<text x="70.00" y="231.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" fill="#17242b">Create account</text>
+<text x="70.00" y="264.00" font-family="DejaVu Sans Mono, monospace" font-size="19" font-weight="400" fill="#60717a">/sign-up</text>
+<rect x="70" y="280" width="920" height="1120" rx="6" fill="#ffffff" stroke="#829299" stroke-width="2"/>
+<rect x="70" y="280" width="920" height="76" rx="0" fill="#f3f6f7" stroke="#829299" stroke-width="1"/>
+<text x="96.00" y="328.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" fill="#223038">Tatawwu&#x27;</text>
+<text x="908.58" y="323.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#223038">Menu</text>
+<text x="110.00" y="430.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="700" fill="#223038">Join Tatawwu’</text>
+<text x="110.00" y="473.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#60717a">Choose how you want to take part.</text>
+<text x="110.00" y="533.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Display name</text>
+<rect x="110" y="545" width="840" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="124.00" y="576.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Your name</text>
+<text x="110.00" y="639.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Username</text>
+<rect x="110" y="651" width="840" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="124.00" y="682.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Choose a username</text>
+<text x="110.00" y="745.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Password</text>
+<rect x="110" y="757" width="840" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="124.00" y="788.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Create a password</text>
+<text x="110.00" y="851.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Confirm password</text>
+<rect x="110" y="863" width="840" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="124.00" y="894.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Repeat your password</text>
+<text x="110.00" y="957.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">City (optional)</text>
+<rect x="110" y="969" width="840" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="124.00" y="1000.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Where you are based</text>
+<text x="110.00" y="1081.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#223038">Account type</text>
+<rect x="110" y="1102" width="390" height="52" rx="4" fill="#d6eee3" stroke="#829299" stroke-width="1.3"/>
+<text x="235.47" y="1133.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">(o) Volunteer</text>
+<rect x="535" y="1102" width="415" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="675.74" y="1133.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">( ) Organizer</text>
+<rect x="110" y="1218" width="840" height="58" rx="4" fill="#d6eee3" stroke="#829299" stroke-width="1.3"/>
+<text x="450.35" y="1252.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Create account</text>
+<text x="110.00" y="1335.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#223038">Already have an account? Sign in</text>
+<text x="1090.00" y="231.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" fill="#17242b">Sign in</text>
+<text x="1090.00" y="264.00" font-family="DejaVu Sans Mono, monospace" font-size="19" font-weight="400" fill="#60717a">/sign-in</text>
+<rect x="1090" y="280" width="920" height="1120" rx="6" fill="#ffffff" stroke="#829299" stroke-width="2"/>
+<rect x="1090" y="280" width="920" height="76" rx="0" fill="#f3f6f7" stroke="#829299" stroke-width="1"/>
+<text x="1116.00" y="328.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" fill="#223038">Tatawwu&#x27;</text>
+<text x="1928.58" y="323.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#223038">Menu</text>
+<text x="1130.00" y="430.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="700" fill="#223038">Welcome back</text>
+<text x="1130.00" y="473.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#60717a">Sign in to manage your volunteering.</text>
+<text x="1130.00" y="573.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Username</text>
+<rect x="1130" y="585" width="840" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1144.00" y="616.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Your username</text>
+<text x="1130.00" y="697.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Password</text>
+<rect x="1130" y="709" width="840" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1144.00" y="740.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Enter your password</text>
+<rect x="1130" y="827" width="840" height="58" rx="4" fill="#d6eee3" stroke="#829299" stroke-width="1.3"/>
+<text x="1513.66" y="861.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Sign in</text>
+<text x="1130.00" y="954.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#223038">New to Tatawwu’? Create an account</text>
+<rect x="1130" y="1028" width="840" height="58" rx="4" fill="#f3f6f7" stroke="#c0cbd0" stroke-width="1.3"/>
+<text x="1145.00" y="1060.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#223038">Username or password is incorrect. Please try again.</text>
+<text x="2110.00" y="231.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" fill="#17242b">My profile</text>
+<text x="2110.00" y="264.00" font-family="DejaVu Sans Mono, monospace" font-size="19" font-weight="400" fill="#60717a">/profile</text>
+<rect x="2110" y="280" width="920" height="1120" rx="6" fill="#ffffff" stroke="#829299" stroke-width="2"/>
+<rect x="2110" y="280" width="920" height="76" rx="0" fill="#f3f6f7" stroke="#829299" stroke-width="1"/>
+<text x="2136.00" y="328.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" fill="#223038">Tatawwu&#x27;</text>
+<text x="2948.58" y="323.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#223038">Menu</text>
+<text x="2150.00" y="430.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="700" fill="#223038">My profile</text>
+<text x="2150.00" y="484.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#223038">Username: sara_ahmed</text>
+<text x="2150.00" y="532.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#223038">Account type: Volunteer</text>
+<text x="2150.00" y="620.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Display name</text>
+<rect x="2150" y="632" width="840" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="2164.00" y="663.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Sara Ahmed</text>
+<text x="2150.00" y="743.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">City (optional)</text>
+<rect x="2150" y="755" width="840" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="2164.00" y="786.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#60717a">Manama</text>
+<rect x="2150" y="872" width="360" height="52" rx="4" fill="#d6eee3" stroke="#829299" stroke-width="1.3"/>
+<text x="2257.63" y="903.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Save changes</text>
+<rect x="2150" y="980" width="840" height="58" rx="4" fill="#d6eee3" stroke="#b8c8c0" stroke-width="1.3"/>
+<text x="2165.00" y="1012.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#223038">Your profile has been updated.</text>
+<rect x="70" y="1480" width="1440" height="124.0" rx="7" fill="#f1f5f6" stroke="#c4cfd4" stroke-width="1"/>
+<text x="90.00" y="1521.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#17242b">FLOW &amp; ACCESS</text>
+<text x="90.00" y="1560.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">Volunteer signup leads to discovery; organizer signup leads to organization setup. A single sign-in form routes users by their saved role.</text>
+<text x="90.00" y="1588.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">Admin accounts are provisioned separately; there is no admin key.</text>
+<rect x="1590" y="1480" width="1440" height="124.0" rx="7" fill="#f1f5f6" stroke="#c4cfd4" stroke-width="1"/>
+<text x="1610.00" y="1521.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#17242b">IMPORTANT STATES</text>
+<text x="1610.00" y="1560.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">Show validation, password mismatch, duplicate-username and invalid-credentials errors. Preserve safe entered values after failure.</text>
+<text x="1610.00" y="1588.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">Username and role are read-only. Session expiry returns to sign in; sign-out clears the local token.</text>
+</svg>

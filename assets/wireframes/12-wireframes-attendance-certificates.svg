@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3100" height="1690" viewBox="0 0 3100 1690">
+<title>Tatawwu Bahrain — project design specification</title>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<rect x="65" y="60" width="10" height="56" rx="0" fill="#ff6b3d" stroke="none" stroke-width="1"/>
+<text x="96.00" y="101.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="42" font-weight="700" fill="#17242b">Wireframes / attendance &amp; certificates</text>
+<text x="98.00" y="148.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#52636b">Organizer-only workflow · Campaign completion and certificate generation states</text>
+<text x="2996.60" y="91.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" fill="#52636b">12</text>
+<polyline points="70,1628 3030,1628" fill="none" stroke="#c8d2d7" stroke-width="1" stroke-linejoin="round"/>
+<text x="70.00" y="1660.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#52636b">TATAWWU&#x27;  /  BAHRAIN  /  ENGLISH  /  MERN + JWT + CLOUDINARY</text>
+<text x="2752.36" y="1660.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#52636b">DESIGN SPECIFICATION · 12 SEP 2026</text>
+<text x="70.00" y="231.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" fill="#17242b">Participants and attendance</text>
+<text x="70.00" y="264.00" font-family="DejaVu Sans Mono, monospace" font-size="19" font-weight="400" fill="#60717a">/organizer/campaigns/:id/participants</text>
+<rect x="70" y="280" width="2040" height="1010" rx="6" fill="#ffffff" stroke="#829299" stroke-width="2"/>
+<rect x="70" y="280" width="2040" height="76" rx="0" fill="#f3f6f7" stroke="#829299" stroke-width="1"/>
+<text x="96.00" y="328.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" fill="#223038">Tatawwu&#x27;</text>
+<text x="1575.58" y="326.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#223038">My campaigns     My organization     Profile     Sign out</text>
+<text x="105.00" y="432.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="700" fill="#223038">Community Cleanup — participants</text>
+<rect x="1820" y="402" width="250" height="36" rx="4" fill="#f3f6f7" stroke="#b9c6cc" stroke-width="1.3"/>
+<text x="1832.00" y="425.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="700" fill="#223038">Completed</text>
+<text x="105.00" y="479.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#60717a">19 September 2026 · Manama, Capital · Bahrain</text>
+<text x="105.00" y="524.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="400" fill="#223038">3 active registrations · Activity ended</text>
+<rect x="105" y="590" width="520" height="64" rx="4" fill="#f3f6f7" stroke="#829299" stroke-width="1.3"/>
+<text x="121.00" y="632.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#223038">Volunteer</text>
+<rect x="625" y="590" width="420" height="64" rx="4" fill="#f3f6f7" stroke="#829299" stroke-width="1.3"/>
+<text x="641.00" y="632.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#223038">Attendance</text>
+<rect x="1045" y="590" width="650" height="64" rx="4" fill="#f3f6f7" stroke="#829299" stroke-width="1.3"/>
+<text x="1061.00" y="632.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#223038">Certificate</text>
+<rect x="1695" y="590" width="380" height="64" rx="4" fill="#f3f6f7" stroke="#829299" stroke-width="1.3"/>
+<text x="1711.00" y="632.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#223038">Actions</text>
+<rect x="105" y="654" width="520" height="128" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="123.00" y="723.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#223038">Sara Ahmed</text>
+<rect x="625" y="654" width="420" height="128" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="643.00" y="723.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#223038">Attended · locked</text>
+<rect x="1045" y="654" width="650" height="128" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1063.00" y="723.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#223038">Granted</text>
+<rect x="1695" y="654" width="380" height="128" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1713.00" y="723.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#223038">—</text>
+<rect x="105" y="782" width="520" height="128" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="123.00" y="851.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#223038">Omar Ali</text>
+<rect x="625" y="782" width="420" height="128" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<rect x="643" y="817" width="384" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="785.52" y="848.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Absent  v</text>
+<rect x="1045" y="782" width="650" height="128" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1063.00" y="851.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#223038">Not eligible</text>
+<rect x="1695" y="782" width="380" height="128" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1713.00" y="851.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#223038">—</text>
+<rect x="105" y="910" width="520" height="128" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="123.00" y="979.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#223038">Noor Hassan</text>
+<rect x="625" y="910" width="420" height="128" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<rect x="643" y="945" width="384" height="52" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="773.60" y="976.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Attended  v</text>
+<rect x="1045" y="910" width="650" height="128" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<text x="1063.00" y="979.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#223038">Not granted</text>
+<rect x="1695" y="910" width="380" height="128" rx="4" fill="#ffffff" stroke="#829299" stroke-width="1.3"/>
+<rect x="1713" y="945" width="344" height="52" rx="4" fill="#d6eee3" stroke="#829299" stroke-width="1.3"/>
+<text x="1798.42" y="976.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Grant certificate</text>
+<rect x="105" y="1092" width="315" height="52" rx="4" fill="#d6eee3" stroke="#829299" stroke-width="1.3"/>
+<text x="174.14" y="1123.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#223038">Save attendance</text>
+<rect x="449" y="1092" width="390" height="52" rx="4" fill="#edf1f3" stroke="#c0cbd0" stroke-width="1.3"/>
+<text x="533.03" y="1123.46" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="700" fill="#8a979e">Campaign completed</text>
+<rect x="105" y="1190" width="1970" height="58" rx="4" fill="#d6eee3" stroke="#b8c8c0" stroke-width="1.3"/>
+<text x="120.00" y="1222.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="400" fill="#223038">Certificate recipients can preview and download their PDF from My certificates.</text>
+<rect x="2200" y="280" width="830" height="325.59999999999997" rx="7" fill="#f1f5f6" stroke="#c4cfd4" stroke-width="1"/>
+<text x="2220.00" y="321.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#17242b">BEFORE COMPLETION</text>
+<text x="2220.00" y="363.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">After the activity ends, mark every active registration Attended or</text>
+<text x="2220.00" y="395.20" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">Absent.</text>
+<text x="2220.00" y="427.40" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b"></text>
+<text x="2220.00" y="459.60" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">Mark campaign completed stays disabled while any attendance is</text>
+<text x="2220.00" y="491.80" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">Unmarked.</text>
+<text x="2220.00" y="524.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b"></text>
+<text x="2220.00" y="556.20" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">Cancelled registrations appear separately and cannot receive</text>
+<text x="2220.00" y="588.40" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">attendance or certificates.</text>
+<rect x="2200" y="785" width="830" height="293.4" rx="7" fill="#f1f5f6" stroke="#c4cfd4" stroke-width="1"/>
+<text x="2220.00" y="826.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#17242b">CERTIFICATE ACTION STATES</text>
+<text x="2220.00" y="868.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">Not granted → Grant certificate</text>
+<text x="2220.00" y="900.20" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">Processing → Generating…</text>
+<text x="2220.00" y="932.40" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">Failed → Retry</text>
+<text x="2220.00" y="964.60" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">Issued → Granted</text>
+<text x="2220.00" y="996.80" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b"></text>
+<text x="2220.00" y="1029.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">Only attendees in completed campaigns qualify. Attendance locks</text>
+<text x="2220.00" y="1061.20" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">while a certificate is processing or issued.</text>
+<rect x="70" y="1360" width="1440" height="124.0" rx="7" fill="#f1f5f6" stroke="#c4cfd4" stroke-width="1"/>
+<text x="90.00" y="1401.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#17242b">FLOW &amp; ACCESS</text>
+<text x="90.00" y="1440.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">The owning organizer records attendance after the end, completes the campaign, then chooses which attendees receive a certificate.</text>
+<text x="90.00" y="1468.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">Certificate issuance is optional.</text>
+<rect x="1590" y="1360" width="1440" height="124.0" rx="7" fill="#f1f5f6" stroke="#c4cfd4" stroke-width="1"/>
+<text x="1610.00" y="1401.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#17242b">IMPORTANT STATES</text>
+<text x="1610.00" y="1440.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">Repeated grants return the same certificate. Failed generation can be retried. Certificate number, PDF content and recipient must stay</text>
+<text x="1610.00" y="1468.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">consistent.</text>
+</svg>
