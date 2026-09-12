@@ -114,15 +114,7 @@ Tatawwu’ brings charitable, volunteer, and humanitarian campaigns in Bahrain i
 
 ### Backend route charts
 
-![Authentication, profile, and organization routes](assets/routes/03-backend-auth-organizations.svg)
-
-![Campaign, registration, and attendance routes](assets/routes/04-backend-campaigns-registration.svg)
-
-![Certificate and admin moderation routes](assets/routes/05-backend-certificates-admin.svg)
-
 ### Frontend route chart
-
-![Frontend routes, page components, and access](assets/routes/06-frontend-routes.svg)
 
 ## 5. Component hierarchy
 
