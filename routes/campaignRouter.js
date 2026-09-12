@@ -6,7 +6,7 @@ const campaignCtrl = require("../controllers/campaignCtrl");
 router.post("/", campaignCtrl.create);
 router.get("/", campaignCtrl.index);
 router.get("/:id", campaignCtrl.show);
-router.put("/:id/update", campaignCtrl.update);
-router.delete("/:id/delete", campaignCtrl.delete);
+router.put("/:id", campaignCtrl.update);
+router.delete("/:id", campaignCtrl.delete);
 
 module.exports = router;
