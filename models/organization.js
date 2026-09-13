@@ -67,11 +67,10 @@ status:{
 },
 
 
-  timestamps:{
-    required:true,
-  } 
+  
 
- })
+ },{timestamps: true}
+)
 
  const Organization=mongoose.model("Organization",organizationSchema);
  module.exports=Organization;
