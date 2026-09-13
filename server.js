@@ -14,6 +14,7 @@ const isSignedIn = require("./middleware/isSignedIn");
 const authRouter = require("./routes/authRouter");
 const campaignRouter = require("./routes/campaignRouter");
 const orgnaizationRouter=require("./routes/orgnaizationRouter");
+const registerationRouter = require("./routes/RegisterationRoute");
 
 app.use(cors());
 app.use(express.json());
@@ -28,6 +29,7 @@ app.use("/organizations",orgnaizationRouter);
 
 // PROTECTED
 app.use(isSignedIn);
+app.use("/Registeration",RegisterationRoute);
 
 app.listen(3000, () => {
   console.log("The express app is ready!");
