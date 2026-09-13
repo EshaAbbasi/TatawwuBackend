@@ -8,6 +8,6 @@ const isSignedIn = require("../middleware/isSignedIn");
 router.post("/",isSignedIn,orgnaizationCtrl.create);
 router.get("/",orgnaizationCtrl.index);
 router.get("/:id",orgnaizationCtrl.show);
-
+router.put("/:id",isSignedIn,orgnaizationCtrl.update);
 
 module.exports=router;
