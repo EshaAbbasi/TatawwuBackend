@@ -44,25 +44,32 @@ const create = async (req, res) => {
 
 
 
-
-    const update = async (req, res) => {
-try{
-const registration = await Registration.findByIdAndUpdate(req.params.id, req.body, { new: true });
+const update = async (req, res) => {
+    try{
+    const registration = await Registration.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!registration) {
         return res.status(404).json({ error: "Registration not found" });
     }
-    res.status(200).json(registration);
-    
-
-
-}catch(error){
-            res.status(500).json({ error: error.message });
+     res.status(200).json(registration);
+}
+catch(error){
+    res.status(500).json({ error: error.message });
 
 }
         
 };
 
 
+const deleteRegistration = async (req, res) => {
+    try {
+        const registration = await Registration.findByIdAndDelete(req.params.id);  
+        if (!registration) {
+            return res.status(404).json({ error: "Registration not found" });
+        } 
+    }catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
 
 
 
@@ -71,4 +78,5 @@ module.exports = {
     show,
     create,
     update,
+    delete: deleteRegistration,
 };
