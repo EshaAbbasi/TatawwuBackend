@@ -7,22 +7,43 @@ const registrationSchema = new mongoose.Schema(
             type: mongoose.Schema.types.ObjectId,
             ref:"User",
             required:true,
+
         },
         CampaignId:{
             type: mongoose.Schema.types.ObjectId,
             ref:"Campaign",
             required:true,
         },
+
         status:{
             type:String,
-            enum:["Registered","Cancelled"],
+            enum:[
+                "Registered",
+                "Cancelled"
+            ],
             default:"Registered",
         },
+
         attendance:{
             type:String,
-            enum:["Unmarked","Attended","Absent"],
+            enum:[
+                "Unmarked",
+                "Attended",
+                "Absent"
+            ],
             default:"Unmarked",
         },
+
+        createdAt:{
+            type:Date,
+            timestamps:true,
+        },
+
+        updatedAt:{
+            type:Date,
+            timestamps:true,
+        },
+
     },
     {
 
