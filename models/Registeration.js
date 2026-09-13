@@ -18,10 +18,11 @@ const registrationSchema = new mongoose.Schema(
         status:{
             type:String,
             enum:[
+                "Pending",
                 "Registered",
                 "Cancelled"
             ],
-            default:"Registered",
+            default:"Pending",
         },
 
         attendance:{
@@ -34,15 +35,6 @@ const registrationSchema = new mongoose.Schema(
             default:"Unmarked",
         },
 
-        createdAt:{
-            type:Date,
-            timestamps:true,
-        },
-
-        updatedAt:{
-            type:Date,
-            timestamps:true,
-        },
 
     },
     {
@@ -51,8 +43,6 @@ const registrationSchema = new mongoose.Schema(
     }
     
 );
-
-registrationSchema.index({ volunteerId: 1, CampaignId: 1 }, { unique: true });
 
 const Registration = mongoose.model('Registration', registrationSchema);
 module.exports = Registration;
