@@ -9,5 +9,6 @@ router.post("/",isSignedIn,orgnaizationCtrl.create);
 router.get("/",orgnaizationCtrl.index);
 router.get("/:id",orgnaizationCtrl.show);
 router.put("/:id",isSignedIn,orgnaizationCtrl.update);
+router.delete("/:id",isSignedIn,orgnaizationCtrl.delete);
 
 module.exports=router;
