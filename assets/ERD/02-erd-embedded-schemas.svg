@@ -1,232 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2860" height="1990" viewBox="0 0 2860 1990">
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1430" viewBox="0 0 2000 1430">
 <title>Tatawwu Bahrain — project design specification</title>
 <rect width="100%" height="100%" fill="#ffffff"/>
 <rect x="65" y="60" width="10" height="56" rx="0" fill="#ff6b3d" stroke="none" stroke-width="1"/>
-<text x="96.00" y="101.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="42" font-weight="700" fill="#17242b">Data model / embedded schemas</text>
-<text x="98.00" y="148.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#52636b">Shared structures stored inside documents · These are not separate MongoDB collections</text>
-<text x="2756.60" y="91.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" fill="#52636b">02</text>
-<polyline points="70,1928 2790,1928" fill="none" stroke="#c8d2d7" stroke-width="1" stroke-linejoin="round"/>
-<text x="70.00" y="1960.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#52636b">TATAWWU&#x27;  /  BAHRAIN  /  ENGLISH  /  MERN + JWT + CLOUDINARY</text>
-<text x="2512.36" y="1960.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#52636b">DESIGN SPECIFICATION · 12 SEP 2026</text>
-<rect x="70" y="245" width="865" height="537" rx="3" fill="#d5f0f4" stroke="#52636b" stroke-width="1.5"/>
-<rect x="70" y="245" width="865" height="54" rx="0" fill="#37b7cc" stroke="#52636b" stroke-width="1.5"/>
-<text x="386.14" y="282.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="25" font-weight="700" fill="#17242b">CloudinaryAsset</text>
-<rect x="70" y="299" width="225" height="43" rx="0" fill="#7bcfdb" stroke="#52636b" stroke-width="1"/>
-<text x="82.00" y="329.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">Field</text>
-<rect x="295" y="299" width="160" height="43" rx="0" fill="#7bcfdb" stroke="#52636b" stroke-width="1"/>
-<text x="307.00" y="329.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">Type</text>
-<rect x="455" y="299" width="480" height="43" rx="0" fill="#7bcfdb" stroke="#52636b" stroke-width="1"/>
-<text x="467.00" y="329.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">Options</text>
-<rect x="70" y="342" width="225" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="82.00" y="370.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">assetId</text>
-<rect x="295" y="342" width="160" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="307.00" y="370.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">String</text>
-<rect x="455" y="342" width="480" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="467.00" y="370.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">required</text>
-<rect x="70" y="386" width="225" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="82.00" y="414.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">publicId</text>
-<rect x="295" y="386" width="160" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="307.00" y="414.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">String</text>
-<rect x="455" y="386" width="480" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="467.00" y="414.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">required; server-generated</text>
-<rect x="70" y="430" width="225" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="82.00" y="458.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">resourceType</text>
-<rect x="295" y="430" width="160" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="307.00" y="458.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">String</text>
-<rect x="455" y="430" width="480" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="467.00" y="458.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">image | raw</text>
-<rect x="70" y="474" width="225" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="82.00" y="502.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">deliveryType</text>
-<rect x="295" y="474" width="160" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="307.00" y="502.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">String</text>
-<rect x="455" y="474" width="480" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="467.00" y="502.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">upload | authenticated</text>
-<rect x="70" y="518" width="225" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="82.00" y="546.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">version</text>
-<rect x="295" y="518" width="160" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="307.00" y="546.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">Number</text>
-<rect x="455" y="518" width="480" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="467.00" y="546.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">required</text>
-<rect x="70" y="562" width="225" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="82.00" y="590.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">format</text>
-<rect x="295" y="562" width="160" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="307.00" y="590.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">String</text>
-<rect x="455" y="562" width="480" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="467.00" y="590.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">required; normalized by backend</text>
-<rect x="70" y="606" width="225" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="82.00" y="634.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">bytes</text>
-<rect x="295" y="606" width="160" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="307.00" y="634.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">Number</text>
-<rect x="455" y="606" width="480" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="467.00" y="634.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">required</text>
-<rect x="70" y="650" width="225" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="82.00" y="678.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">secureUrl</text>
-<rect x="295" y="650" width="160" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="307.00" y="678.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">String</text>
-<rect x="455" y="650" width="480" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="467.00" y="678.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">public images only</text>
-<rect x="70" y="694" width="225" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="82.00" y="722.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">width</text>
-<rect x="295" y="694" width="160" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="307.00" y="722.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">Number</text>
-<rect x="455" y="694" width="480" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="467.00" y="722.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">images only</text>
-<rect x="70" y="738" width="225" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="82.00" y="766.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">height</text>
-<rect x="295" y="738" width="160" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="307.00" y="766.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">Number</text>
-<rect x="455" y="738" width="480" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="467.00" y="766.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">images only</text>
-<rect x="995" y="245" width="870" height="317" rx="3" fill="#d5f0f4" stroke="#52636b" stroke-width="1.5"/>
-<rect x="995" y="245" width="870" height="54" rx="0" fill="#37b7cc" stroke="#52636b" stroke-width="1.5"/>
-<text x="1340.54" y="282.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="25" font-weight="700" fill="#17242b">ReviewEntry</text>
-<rect x="995" y="299" width="245" height="43" rx="0" fill="#7bcfdb" stroke="#52636b" stroke-width="1"/>
-<text x="1007.00" y="329.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">Field</text>
-<rect x="1240" y="299" width="160" height="43" rx="0" fill="#7bcfdb" stroke="#52636b" stroke-width="1"/>
-<text x="1252.00" y="329.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">Type</text>
-<rect x="1400" y="299" width="465" height="43" rx="0" fill="#7bcfdb" stroke="#52636b" stroke-width="1"/>
-<text x="1412.00" y="329.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">Options</text>
-<rect x="995" y="342" width="245" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="1007.00" y="370.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">adminId</text>
-<rect x="1240" y="342" width="160" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="1252.00" y="370.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">ObjectId</text>
-<rect x="1400" y="342" width="465" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="1412.00" y="370.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">required; ref: User (admin)</text>
-<rect x="995" y="386" width="245" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="1007.00" y="414.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">decision</text>
-<rect x="1240" y="386" width="160" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="1252.00" y="414.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">String</text>
-<rect x="1400" y="386" width="465" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="1412.00" y="414.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">approved | rejected | removed</text>
-<rect x="995" y="430" width="245" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="1007.00" y="458.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">reason</text>
-<rect x="1240" y="430" width="160" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="1252.00" y="458.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">String</text>
-<rect x="1400" y="430" width="465" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="1412.00" y="458.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">required for rejection/removal</text>
-<rect x="995" y="474" width="245" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="1007.00" y="502.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">reviewedRevision</text>
-<rect x="1240" y="474" width="160" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="1252.00" y="502.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">Number</text>
-<rect x="1400" y="474" width="465" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="1412.00" y="502.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">required</text>
-<rect x="995" y="518" width="245" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="1007.00" y="546.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">reviewedAt</text>
-<rect x="1240" y="518" width="160" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="1252.00" y="546.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">Date</text>
-<rect x="1400" y="518" width="465" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="1412.00" y="546.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">required</text>
-<rect x="1925" y="245" width="865" height="493" rx="3" fill="#d5f0f4" stroke="#52636b" stroke-width="1.5"/>
-<rect x="1925" y="245" width="865" height="54" rx="0" fill="#37b7cc" stroke="#52636b" stroke-width="1.5"/>
-<text x="2215.80" y="282.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="25" font-weight="700" fill="#17242b">CertificateSnapshot</text>
-<rect x="1925" y="299" width="245" height="43" rx="0" fill="#7bcfdb" stroke="#52636b" stroke-width="1"/>
-<text x="1937.00" y="329.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">Field</text>
-<rect x="2170" y="299" width="160" height="43" rx="0" fill="#7bcfdb" stroke="#52636b" stroke-width="1"/>
-<text x="2182.00" y="329.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">Type</text>
-<rect x="2330" y="299" width="460" height="43" rx="0" fill="#7bcfdb" stroke="#52636b" stroke-width="1"/>
-<text x="2342.00" y="329.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">Options</text>
-<rect x="1925" y="342" width="245" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="1937.00" y="370.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">volunteerName</text>
-<rect x="2170" y="342" width="160" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="2182.00" y="370.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">String</text>
-<rect x="2330" y="342" width="460" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="2342.00" y="370.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">required</text>
-<rect x="1925" y="386" width="245" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="1937.00" y="414.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">campaignTitle</text>
-<rect x="2170" y="386" width="160" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="2182.00" y="414.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">String</text>
-<rect x="2330" y="386" width="460" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="2342.00" y="414.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">required</text>
-<rect x="1925" y="430" width="245" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="1937.00" y="458.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">organizationName</text>
-<rect x="2170" y="430" width="160" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="2182.00" y="458.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">String</text>
-<rect x="2330" y="430" width="460" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="2342.00" y="458.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">required</text>
-<rect x="1925" y="474" width="245" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="1937.00" y="502.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">country</text>
-<rect x="2170" y="474" width="160" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="2182.00" y="502.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">String</text>
-<rect x="2330" y="474" width="460" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="2342.00" y="502.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">fixed: BH</text>
-<rect x="1925" y="518" width="245" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="1937.00" y="546.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">governorate</text>
-<rect x="2170" y="518" width="160" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="2182.00" y="546.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">String</text>
-<rect x="2330" y="518" width="460" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="2342.00" y="546.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">required; GOVERNORATE</text>
-<rect x="1925" y="562" width="245" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="1937.00" y="590.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">area</text>
-<rect x="2170" y="562" width="160" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="2182.00" y="590.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">String</text>
-<rect x="2330" y="562" width="460" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="2342.00" y="590.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">required</text>
-<rect x="1925" y="606" width="245" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="1937.00" y="634.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">startsAt</text>
-<rect x="2170" y="606" width="160" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="2182.00" y="634.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">Date</text>
-<rect x="2330" y="606" width="460" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="2342.00" y="634.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">required; UTC</text>
-<rect x="1925" y="650" width="245" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="1937.00" y="678.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">endsAt</text>
-<rect x="2170" y="650" width="160" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="2182.00" y="678.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">Date</text>
-<rect x="2330" y="650" width="460" height="44" rx="0" fill="#b3e2ea" stroke="#52636b" stroke-width="1"/>
-<text x="2342.00" y="678.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">required; UTC</text>
-<rect x="1925" y="694" width="245" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="1937.00" y="722.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">timezone</text>
-<rect x="2170" y="694" width="160" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="2182.00" y="722.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">String</text>
-<rect x="2330" y="694" width="460" height="44" rx="0" fill="#d5f0f4" stroke="#52636b" stroke-width="1"/>
-<text x="2342.00" y="722.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#17242b">fixed: Asia/Bahrain</text>
-<rect x="70" y="812" width="865" height="236.0" rx="7" fill="#f1f5f6" stroke="#c4cfd4" stroke-width="1"/>
-<text x="90.00" y="853.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#17242b">EMBEDDED IN</text>
-<text x="90.00" y="892.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">Organization.logo and Campaign.coverImage:</text>
-<text x="90.00" y="920.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">image + upload; optional public media.</text>
-<text x="90.00" y="948.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b"></text>
-<text x="90.00" y="976.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">Certificate.pdfAsset:</text>
-<text x="90.00" y="1004.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">raw + authenticated; exists after issuance.</text>
-<text x="90.00" y="1032.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">PDF publicId ends in .pdf. Delivery URLs stay inside the backend.</text>
-<rect x="995" y="592" width="870" height="264.0" rx="7" fill="#f1f5f6" stroke="#c4cfd4" stroke-width="1"/>
-<text x="1015.00" y="633.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#17242b">EMBEDDED IN</text>
-<text x="1015.00" y="672.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">Organization.reviews and Campaign.reviews.</text>
-<text x="1015.00" y="700.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b"></text>
-<text x="1015.00" y="728.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">Organizations allow approved/rejected.</text>
-<text x="1015.00" y="756.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">Removed is a campaign audit decision.</text>
-<text x="1015.00" y="784.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b"></text>
-<text x="1015.00" y="812.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">The approval endpoint accepts only approved/rejected; removal has its own</text>
-<text x="1015.00" y="840.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">endpoint.</text>
-<rect x="1925" y="768" width="865" height="236.0" rx="7" fill="#f1f5f6" stroke="#c4cfd4" stroke-width="1"/>
-<text x="1945.00" y="809.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#17242b">EMBEDDED IN</text>
-<text x="1945.00" y="848.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">Certificate.snapshot.</text>
-<text x="1945.00" y="876.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b"></text>
-<text x="1945.00" y="904.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">Capture values when a generation attempt is reserved. Freeze after successful</text>
-<text x="1945.00" y="932.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">issuance.</text>
-<text x="1945.00" y="960.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b"></text>
-<text x="1945.00" y="988.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">Names, location and activity dates remain stable when live profiles later change.</text>
-<rect x="70" y="1330" width="2720" height="53" rx="0" fill="#06c879" stroke="#52636b" stroke-width="1"/>
-<text x="92.00" y="1366.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" fill="#17242b">ENUMS AND BAHRAIN DEFAULTS</text>
-<rect x="70" y="1383" width="2720" height="59" rx="0" fill="#eaf6ef" stroke="#52636b" stroke-width="1"/>
-<polyline points="470,1383 470,1442" fill="none" stroke="#52636b" stroke-width="1" stroke-linejoin="round"/>
-<text x="90.00" y="1419.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">USER_ROLE</text>
-<text x="493.00" y="1420.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#17242b">volunteer | organizer | admin</text>
-<rect x="70" y="1442" width="2720" height="59" rx="0" fill="#d5eee0" stroke="#52636b" stroke-width="1"/>
-<polyline points="470,1442 470,1501" fill="none" stroke="#52636b" stroke-width="1" stroke-linejoin="round"/>
-<text x="90.00" y="1478.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">GOVERNORATE</text>
-<text x="493.00" y="1479.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#17242b">capital | muharraq | northern | southern</text>
-<rect x="70" y="1501" width="2720" height="59" rx="0" fill="#eaf6ef" stroke="#52636b" stroke-width="1"/>
-<polyline points="470,1501 470,1560" fill="none" stroke="#52636b" stroke-width="1" stroke-linejoin="round"/>
-<text x="90.00" y="1537.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">ORG_STATUS</text>
-<text x="493.00" y="1538.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#17242b">pending | approved | rejected</text>
-<rect x="70" y="1560" width="2720" height="59" rx="0" fill="#d5eee0" stroke="#52636b" stroke-width="1"/>
-<polyline points="470,1560 470,1619" fill="none" stroke="#52636b" stroke-width="1" stroke-linejoin="round"/>
-<text x="90.00" y="1596.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">CAMPAIGN_STATUS</text>
-<text x="493.00" y="1597.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#17242b">draft | pending | approved | rejected | cancelled | completed | removed</text>
-<rect x="70" y="1619" width="2720" height="59" rx="0" fill="#eaf6ef" stroke="#52636b" stroke-width="1"/>
-<polyline points="470,1619 470,1678" fill="none" stroke="#52636b" stroke-width="1" stroke-linejoin="round"/>
-<text x="90.00" y="1655.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">CATEGORY</text>
-<text x="493.00" y="1656.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#17242b">Environment · Food Support · Community Support · Education · Humanitarian Support · Other</text>
-<text x="82.00" y="1755.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" font-weight="700" fill="#17242b">Country = BH. Campaign timezone = Asia/Bahrain. Store timestamps in UTC; display activity times in Bahrain time (UTC+3).</text>
-<text x="82.00" y="1800.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">All schemas accept normal Unicode text; the interface and certificate template are English. Generated IDs/timestamps are managed by the backend.</text>
-<text x="82.00" y="1842.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="400" fill="#52636b">Certificate state: processing | issued | failed. pdfAsset and issuedAt are absent until issuance. Optional subdocuments use _id: false.</text>
+<text x="96.00" y="101.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="42" font-weight="700" fill="#17242b">Campaign / favorites and certificates</text>
+<text x="98.00" y="148.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#52636b">User references only · No standalone Favorite or Certificate model</text>
+<text x="1896.60" y="91.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" fill="#52636b">02</text>
+<polyline points="70,1368 1930,1368" fill="none" stroke="#c8d2d7" stroke-width="1" stroke-linejoin="round"/>
+<text x="70.00" y="1400.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#52636b">TATAWWU&#x27;  /  BAHRAIN  /  ENGLISH  /  MERN + JWT + CLOUDINARY</text>
+<text x="1652.36" y="1400.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#52636b">DESIGN SPECIFICATION · 13 SEP 2026</text>
+<rect x="80" y="240" width="1840" height="195.4" rx="3" fill="#d0f3e2" stroke="#52636b" stroke-width="1.5"/>
+<rect x="80" y="240" width="1840" height="54" rx="0" fill="#06c879" stroke="#52636b" stroke-width="1.5"/>
+<text x="885.57" y="277.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="25" font-weight="700" fill="#17242b">Campaign fields</text>
+<rect x="80" y="294" width="400" height="43" rx="0" fill="#53dca3" stroke="#52636b" stroke-width="1"/>
+<text x="92.00" y="324.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">Field</text>
+<rect x="480" y="294" width="340" height="43" rx="0" fill="#53dca3" stroke="#52636b" stroke-width="1"/>
+<text x="492.00" y="324.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">Type</text>
+<rect x="820" y="294" width="1100" height="43" rx="0" fill="#53dca3" stroke="#52636b" stroke-width="1"/>
+<text x="832.00" y="324.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">Options</text>
+<rect x="80" y="337" width="400" height="49.2" rx="0" fill="#d0f3e2" stroke="#52636b" stroke-width="1"/>
+<text x="92.00" y="369.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" fill="#17242b">favorites</text>
+<rect x="480" y="337" width="340" height="49.2" rx="0" fill="#d0f3e2" stroke="#52636b" stroke-width="1"/>
+<text x="492.00" y="369.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="400" fill="#17242b">[ObjectId]</text>
+<rect x="820" y="337" width="1100" height="49.2" rx="0" fill="#d0f3e2" stroke="#52636b" stroke-width="1"/>
+<text x="832.00" y="369.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="400" fill="#17242b">ref: User; default: []; one entry per volunteer; select: false</text>
+<rect x="80" y="386.2" width="400" height="49.2" rx="0" fill="#abe8cd" stroke="#52636b" stroke-width="1"/>
+<text x="92.00" y="418.20" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" fill="#17242b">certificates</text>
+<rect x="480" y="386.2" width="340" height="49.2" rx="0" fill="#abe8cd" stroke="#52636b" stroke-width="1"/>
+<text x="492.00" y="418.20" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="400" fill="#17242b">[ObjectId]</text>
+<rect x="820" y="386.2" width="1100" height="49.2" rx="0" fill="#abe8cd" stroke="#52636b" stroke-width="1"/>
+<text x="832.00" y="418.20" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="400" fill="#17242b">ref: User; default: []; one entry per volunteer; select: false</text>
+<rect x="80" y="550" width="900" height="261.2" rx="7" fill="#f1f5f6" stroke="#c4cfd4" stroke-width="1"/>
+<text x="100.00" y="591.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#17242b">FAVORITES</text>
+<text x="100.00" y="633.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">PUT /campaigns/:id</text>
+<text x="100.00" y="665.20" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">{ &quot;action&quot;: &quot;favorite&quot; }</text>
+<text x="100.00" y="697.40" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">{ &quot;action&quot;: &quot;unfavorite&quot; }</text>
+<text x="100.00" y="729.60" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b"></text>
+<text x="100.00" y="761.80" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">The API derives the volunteer ID from the verified JWT account. Only</text>
+<text x="100.00" y="794.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">volunteers can save approved campaigns.</text>
+<rect x="1020" y="550" width="900" height="261.2" rx="7" fill="#f1f5f6" stroke="#c4cfd4" stroke-width="1"/>
+<text x="1040.00" y="591.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#17242b">CERTIFICATES</text>
+<text x="1040.00" y="633.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">PUT /campaigns/:id</text>
+<text x="1040.00" y="665.20" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">{ &quot;action&quot;: &quot;grantCertificate&quot;, &quot;volunteerId&quot;: &quot;...&quot; }</text>
+<text x="1040.00" y="697.40" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">{ &quot;action&quot;: &quot;removeCertificate&quot;, &quot;volunteerId&quot;: &quot;...&quot; }</text>
+<text x="1040.00" y="729.60" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b"></text>
+<text x="1040.00" y="761.80" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">Only the owning organizer manages grants. Granting requires a completed</text>
+<text x="1040.00" y="794.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">campaign and an attended registration.</text>
+<rect x="80" y="1120" width="1840" height="132.39999999999998" rx="7" fill="#f1f5f6" stroke="#c4cfd4" stroke-width="1"/>
+<text x="100.00" y="1161.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#17242b">PERSONAL LISTS</text>
+<text x="100.00" y="1203.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">GET /campaigns/?favorites=me · GET /campaigns/?certificates=me</text>
+<text x="100.00" y="1235.20" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">Both requests require a volunteer JWT. Direct replacement of either array through campaign create/update is rejected.</text>
 </svg>
