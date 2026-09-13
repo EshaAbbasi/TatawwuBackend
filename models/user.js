@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -9,16 +9,20 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-});
-
-userSchema.set('toJSON', {
-  transform: (document, userObj) => {
-    delete userObj.password;
-    // we can add any field we want here that is not on the model
-    // computed fields
+  role: {
+    type: String,
+    enum: ["Admin", "Volunteer", "Organizer"],
+    default: "Volunteer",
+    required: true,
   },
 });
 
-const User = mongoose.model('User', userSchema);
+userSchema.set("toJSON", {
+  transform: (document, userObj) => {
+    delete userObj.password;
+  },
+});
+
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;
