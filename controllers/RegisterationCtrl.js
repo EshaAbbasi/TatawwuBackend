@@ -31,7 +31,22 @@ const show = async (req,res) =>{
 };
 
 
+const create = async (req, res) => {
+
+    try {
+        const registration = await Registration.create(req.body);
+        res.status(201).json(registration);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }  
+
+};
+
+    
+
+
 module.exports = {
     index,
     show,
+    create,
 };
