@@ -1,0 +1,18 @@
+const Orgnaization=require(".../models/Orgnaization");
+
+const create =async(req,res)=>{
+    try{
+        const organization=await Orgnaization.create(req.body);
+        res.status(201).json(organization);
+    
+    }
+    catch(error){
+res.status(400).json({
+    error:error.message
+})
+    }
+};
+
+module.exports={
+create,
+}
