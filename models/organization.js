@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
- const organizationSchema=new mongoose.schema({
+ const organizationSchema=new mongoose.Schema({
 ownerId:{
 type: mongoose.Schema.Types.ObjectId,
       ref: "User",
