@@ -1,6 +1,6 @@
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const User = require('../models/user');
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const User = require("../models/user");
 
 const SALT_ROUDS = 10;
 
@@ -10,7 +10,7 @@ const signup = async (req, res) => {
     const userInDatabase = await User.findOne({ username: req.body.username });
     // if the user exists send error msg
     if (userInDatabase) {
-      return res.status(409).json({ err: 'Invalid input' });
+      return res.status(409).json({ err: "Invalid input" });
     }
 
     // Encrypt the password
@@ -22,6 +22,7 @@ const signup = async (req, res) => {
     const user = await User.create(req.body);
     const payload = {
       username: user.username,
+      role: user.role,
       _id: user._id,
     };
 
@@ -30,7 +31,7 @@ const signup = async (req, res) => {
     res.status(201).json({ user, token });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ err: 'something went wrong' });
+    res.status(500).json({ err: "something went wrong" });
   }
 };
 
@@ -40,12 +41,12 @@ const login = async (req, res) => {
 
     // only allow users that exist to login
     if (!userInDatabase) {
-      return res.status(401).json({ err: 'Invalid credentials' });
+      return res.status(401).json({ err: "Invalid credentials" });
     }
 
     // make sure the user's password matches the req.body.password
     if (!bcrypt.compareSync(req.body.password, userInDatabase.password)) {
-      return res.status(401).json({ err: 'Invalid credentials' });
+      return res.status(401).json({ err: "Invalid credentials" });
     }
 
     // There is a user AND they had the correct password. Time to make a session!
@@ -53,6 +54,7 @@ const login = async (req, res) => {
     // If there is other data you want to save to `req.session.user`, do so here!
     const payload = {
       username: userInDatabase.username,
+      role: userInDatabase.role,
       _id: userInDatabase._id,
     };
 
