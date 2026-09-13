@@ -2,6 +2,13 @@ const Campaign = require("../models/Campaign");
 
 const create = async (req, res) => {
   try {
+    if (req.user.role !== "Organizer") {
+      return res
+        .status(403)
+        .json({ error: "Only organizers can create campaigns" });
+    }
+
+    req.body.organizationId = req.user._id;
     const campaign = await Campaign.create(req.body);
     res.status(201).json(campaign);
   } catch (error) {
@@ -32,6 +39,12 @@ const show = async (req, res) => {
 
 const update = async (req, res) => {
   try {
+    if (req.user.role !== "Organizer" && req.user.role !== "Admin") {
+      return res
+        .status(403)
+        .json({ error: "Only organizers and admins can update campaigns" });
+    }
+
     const campaign = await Campaign.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     });
@@ -46,6 +59,11 @@ const update = async (req, res) => {
 
 const deleteCampaign = async (req, res) => {
   try {
+    if (req.user.role !== "Organizer") {
+      return res
+        .status(403)
+        .json({ error: "Only organizers can delete campaigns" });
+    }
     const campaign = await Campaign.findByIdAndDelete(req.params.id);
     if (!campaign) {
       return res.status(404).json({ error: "Campaign not found" });
