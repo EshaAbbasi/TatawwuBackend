@@ -6,4 +6,8 @@ const orgnaizationCtrl = require("../controllers/orgnaizationCtrl");
 const isSignedIn = require("../middleware/isSignedIn");
 
 router.post("/",isSignedIn,orgnaizationCtrl.create);
+router.get("/",orgnaizationCtrl.index);
+router.get("/:id",orgnaizationCtrl.show);
+
+
 module.exports=router;
