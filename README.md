@@ -49,18 +49,18 @@ Tatawwu’ brings charitable, volunteer, and humanitarian campaigns in Bahrain i
 
 ### Organizers
 
-| ID  | User story                                                                                                                              |
-| --- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| O01 | As an organizer, I want to create and edit my Bahrain organization profile so that I can submit it for approval.                        |
-| O02 | As an organizer, I want to upload, replace, or remove my organization’s logo so that volunteers can recognize it.                       |
-| O03 | As an organizer, I want to create and view campaign drafts so that I can prepare activities in Bahrain.                                 |
-| O04 | As an organizer, I want to edit campaign information and its cover image before the activity starts so that the listing stays accurate. |
-| O05 | As an organizer, I want to delete unused unpublished campaigns so that I can remove unnecessary drafts.                                 |
-| O06 | As an organizer, I want to submit campaigns for approval and read rejection feedback so that I can get them published.                  |
-| O07 | As an organizer, I want to cancel a published campaign so that participants can see that it will not take place.                        |
-| O08 | As an organizer, I want to view participants and record attendance after an activity so that participation is documented.               |
-| O09 | As an organizer, I want to complete a campaign after recording attendance so that attendees become eligible for certificates.           |
-| O10 | As an organizer, I want to grant certificates to eligible attendees so that the platform generates and stores their PDFs.               |
+| ID  | User story                                                                                                                                    |
+| --- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| O01 | As an organizer, I want to create and edit my Bahrain organization profile so that I can submit it for approval.                              |
+| O02 | As an organizer, I want to upload, replace, or remove my organization’s logo so that volunteers can recognize it.                             |
+| O03 | As an organizer, I want to create and view campaign drafts so that I can prepare activities in Bahrain.                                       |
+| O04 | As an organizer, I want to edit campaign information and its cover image before the activity starts so that the listing stays accurate.       |
+| O05 | As an organizer, I want to delete unused unpublished campaigns so that I can remove unnecessary drafts.                                       |
+| O06 | As an organizer, I want to submit campaigns for approval and read rejection feedback so that I can get them published.                        |
+| O07 | As an organizer, I want to cancel a published campaign so that participants can see that it will not take place.                              |
+| O08 | As an organizer, I want to view participants and record attendance after an activity so that participation is documented.                     |
+| O09 | As an organizer, I want to complete a campaign after recording attendance so that attendees become eligible for certificates.                 |
+| O10 | As an organizer, I want to grant certificates to eligible attendees so that their user IDs are recorded in the campaign’s certificate grants. |
 
 ### Admins
 
@@ -72,9 +72,9 @@ Tatawwu’ brings charitable, volunteer, and humanitarian campaigns in Bahrain i
 
 ## 2. Entity relationship diagrams (ERDs)
 
-![Six MongoDB collections and their relationships](assets/ERD/01-erd-collections.svg)
+![Four MongoDB models with Campaign user-reference fields](assets/ERD/01-erd-collections.svg)
 
-![Embedded Cloudinary asset, review, and certificate snapshot schemas](assets/ERD/02-erd-embedded-schemas.svg)
+![Campaign favorites and certificate fields](assets/ERD/02-erd-embedded-schemas.svg)
 
 ## 3. Wireframes
 
@@ -114,7 +114,13 @@ Tatawwu’ brings charitable, volunteer, and humanitarian campaigns in Bahrain i
 
 ### Backend route charts
 
-### Frontend route chart
+![Authentication routes](assets/routes/01-auth.svg)
+
+![Organizations routes](assets/routes/02-organizations.svg)
+
+![Campaigns routes](assets/routes/03-campaigns.svg)
+
+![Registrations routes](assets/routes/06-registrations.svg)
 
 ## 5. Component hierarchy
 
