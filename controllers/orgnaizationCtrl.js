@@ -39,17 +39,24 @@ const update = async (req, res) => {
     if (req.user.role !== "Organizer") {
       return res.status(403).json({ error: "Only organizers can update" });
     }
-    const organization = await Orgnaization.findByIdAndUpdate(
+
+    const organization = await Orgnaization.findById(req.params.id);
+    if (!organization) {
+      return res.status(404).json({ error: "Organization not found" });
+    }
+
+    if (organization.ownerId.toString() !== req.user._id.toString()) {
+      return res
+        .status(403)
+        .json({ error: "You can only update your own organization" });
+    }
+
+    const updated = await Orgnaization.findByIdAndUpdate(
       req.params.id,
       req.body,
-      {
-        new: true,
-      },
+      { new: true, runValidators: true },
     );
-    if (!organization) {
-      return res.status(404).json({ error: "Organization  not found" });
-    }
-    res.status(200).json(organization);
+    res.status(200).json(updated);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -58,12 +65,21 @@ const update = async (req, res) => {
 const deleteOrganization = async (req, res) => {
   try {
     if (req.user.role !== "Organizer") {
-      return res.status(403).json({ error: "Only own organizers can delete " });
+      return res.status(403).json({ error: "Only organizers can delete" });
     }
-    const organization = await Orgnaization.findByIdAndDelete(req.params.id);
+
+    const organization = await Orgnaization.findById(req.params.id);
     if (!organization) {
       return res.status(404).json({ error: "Organization not found" });
     }
+
+    if (organization.ownerId.toString() !== req.user._id.toString()) {
+      return res
+        .status(403)
+        .json({ error: "You can only delete your own organization" });
+    }
+
+    await Orgnaization.findByIdAndDelete(req.params.id);
     res.status(204).end();
   } catch (error) {
     res.status(400).json({ error: error.message });
