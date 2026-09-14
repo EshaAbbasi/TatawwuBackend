@@ -38,11 +38,27 @@ const show = async (req, res) => {
 };
 
 const update = async (req, res) => {
+  if (req.user.role !== "Organizer" && req.user.role !== "Admin") {
+    return res
+      .status(403)
+      .json({ error: "Only organizers and admins can update campaigns" });
+  }
+
   try {
-    if (req.user.role !== "Organizer" && req.user.role !== "Admin") {
-      return res
-        .status(403)
-        .json({ error: "Only organizers and admins can update campaigns" });
+    if (req.user.role === "Admin") {
+      const { status, reviewReason } = req.body || {};
+
+      if (!["Approved", "Rejected", "Removed"].includes(status)) {
+        return res.status(400).json({ error: "Invalid review status" });
+      }
+
+      const updated = await Campaign.findOneAndUpdate(
+        { _id: req.params.id },
+        { $set: { status, reviewReason } },
+        { new: true },
+      );
+
+      return res.status(200).json(updated);
     }
 
     const campaign = await Campaign.findByIdAndUpdate(req.params.id, req.body, {
