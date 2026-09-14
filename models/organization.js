@@ -60,6 +60,9 @@ const organizationSchema = new mongoose.Schema(
       ],
       default: "Pending",
     },
+    reviewReason: {
+      type: String,
+    },
   },
   { timestamps: true },
 );
