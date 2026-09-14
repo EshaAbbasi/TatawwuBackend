@@ -77,6 +77,9 @@ const campaignSchema = new mongoose.Schema(
       ],
       default: "Pending",
     },
+    reviewReason: {
+      type: String,
+    },
     favorites: [
       {
         type: mongoose.Schema.Types.ObjectId,
