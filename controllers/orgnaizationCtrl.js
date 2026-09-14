@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const Orgnaization = require("../models/organization");
 
 const create = async (req, res) => {
@@ -35,9 +36,27 @@ const show = async (req, res) => {
 };
 
 const update = async (req, res) => {
+  if (req.user.role !== "Organizer" && req.user.role !== "Admin") {
+    return res
+      .status(403)
+      .json({ error: "Only organizers or admins can update" });
+  }
+
   try {
-    if (req.user.role !== "Organizer") {
-      return res.status(403).json({ error: "Only organizers can update" });
+    if (req.user.role === "Admin") {
+      const { status, reviewReason } = req.body || {};
+
+      if (!["Approved", "Rejected", "Removed"].includes(status)) {
+        return res.status(400).json({ error: "Invalid review status" });
+      }
+
+      const updated = await Orgnaization.findOneAndUpdate(
+        { _id: req.params.id },
+        { $set: { status, reviewReason } },
+        { new: true },
+      );
+
+      return res.status(200).json(updated);
     }
 
     const organization = await Orgnaization.findById(req.params.id);
