@@ -7,10 +7,13 @@ const SALT_ROUDS = 10;
 const signup = async (req, res) => {
   try {
     // verify if the username alrady exists
-    const userInDatabase = await User.findOne({ username: req.body.username });
+    const userInDatabase = await User.findOne({
+      username: req.body.username,
+      role: req.body.role,
+    });
     // if the user exists send error msg
     if (userInDatabase) {
-      return res.status(409).json({ err: "Invalid input" });
+      return res.status(409).json({ err: "Invalid credentials" });
     }
 
     // Encrypt the password
@@ -37,7 +40,10 @@ const signup = async (req, res) => {
 
 const login = async (req, res) => {
   try {
-    const userInDatabase = await User.findOne({ username: req.body.username });
+    const userInDatabase = await User.findOne({
+      username: req.body.username,
+      role: req.body.role,
+    });
 
     // only allow users that exist to login
     if (!userInDatabase) {
