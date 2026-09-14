@@ -9,6 +9,7 @@ const app = express();
 const cors = require("cors");
 const logger = require("morgan");
 const isSignedIn = require("./middleware/isSignedIn");
+const isAdmin = require("./middleware/isAdmin");
 
 // Routers
 const authRouter = require("./routes/authRouter");
@@ -29,6 +30,8 @@ app.use("/organizations", orgnaizationRouter);
 
 // PROTECTED
 app.use(isSignedIn);
+// Admin access
+app.use(isAdmin);
 app.use("/Registeration", registerationRouter);
 
 app.listen(3000, () => {
