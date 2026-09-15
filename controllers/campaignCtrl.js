@@ -1,5 +1,5 @@
 const Organization = require("../models/organization");
-const Campaign = require("../models/campaign");
+const Campaign = require("../models/Campaign");
 
 const getOwnOrganization = (userId) =>
   Organization.findOne({ ownerId: userId });
