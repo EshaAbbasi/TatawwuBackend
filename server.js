@@ -41,5 +41,5 @@ app.use(isAdmin);
 app.use("/Registeration", registerationRouter);
 
 app.listen(3000, "0.0.0.0", () => {
-  console.log(`The express app is ready on port ${port}!`);
+  console.log(`The express app is ready on port!`);
 });
