@@ -15,6 +15,7 @@ const create = async (req, res) => {
     });
   }
 };
+
 const index = async (req, res) => {
   try {
     const organizations = await Orgnaization.find();
@@ -23,6 +24,19 @@ const index = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
+const showMine = async (req, res) => {
+  try {
+    const organization = await Orgnaization.findOne({ ownerId: req.user._id });
+    if (!organization) {
+      return res.status(404).json({ error: "Organization not found" });
+    }
+    res.status(200).json(organization);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
 const show = async (req, res) => {
   try {
     const organization = await Orgnaization.findById(req.params.id);
@@ -104,9 +118,11 @@ const deleteOrganization = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
+
 module.exports = {
   create,
   index,
+  showMine,
   show,
   update,
   delete: deleteOrganization,
