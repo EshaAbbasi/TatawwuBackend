@@ -7,6 +7,7 @@ const isSignedIn = require("../middleware/isSignedIn");
 
 router.post("/", isSignedIn, orgnaizationCtrl.create);
 router.get("/", orgnaizationCtrl.index);
+router.get("/mine", isSignedIn, orgnaizationCtrl.showMine);
 router.get("/:id", orgnaizationCtrl.show);
 router.put("/:id", isSignedIn, orgnaizationCtrl.update);
 router.delete("/:id", isSignedIn, orgnaizationCtrl.delete);
