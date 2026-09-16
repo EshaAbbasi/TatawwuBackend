@@ -8,13 +8,13 @@ Tatawwu’ brings charitable, volunteer, and humanitarian campaigns in Bahrain i
 
 1. [AAU user stories](#1-aau-user-stories)
 2. [Entity relationship diagrams](#2-entity-relationship-diagrams-erds)
-3. [Wireframes](#3-wireframes)
+3. [Application pages](#3-application-pages)
 4. [Routes](#4-routes)
 5. [Component hierarchy](#5-component-hierarchy)
 
 ### Getting started
 
-- **Deployed application:**
+- **Deployment:** configure the environments below, then deploy the frontend and backend separately.
 - **Planning:** [team Trello board](https://trello.com/b/SZ3tg7mp/tatawuu).
 - **Frontend repository:** [ctarek2015-wq/tatawuu-frontend](https://github.com/ctarek2015-wq/tatawuu-frontend).
 - **Backend repository:** [EshaAbbasi/TatawwuBackend](https://github.com/EshaAbbasi/TatawwuBackend).
@@ -72,72 +72,157 @@ Tatawwu’ brings charitable, volunteer, and humanitarian campaigns in Bahrain i
 
 ## 2. Entity relationship diagrams (ERDs)
 
-![Four MongoDB models with Campaign user-reference fields](assets/ERD/01-erd-collections.svg)
+The application uses **three MongoDB models**. Participants are embedded in Campaign, following the embedded-comments approach in the Hoots example. There is no Registration model, controller, or collection used by this version.
 
-![Campaign favorites and certificate fields](assets/ERD/02-erd-embedded-schemas.svg)
+| Model | Main fields and relationships |
+| --- | --- |
+| User | `username`, hashed `password`, `name`, optional `city`, and `role` (`Volunteer`, `Organizer`, `Admin`). |
+| Organization | One `ownerId` referencing User; name, description, Bahrain location, public contacts, `logo`, `logoPublicId`, status, and review feedback. |
+| Campaign | `organizationId`, title, description, category, Bahrain location, venue, `startsAt`, `endsAt`, capacity, cover image/public ID, status, `wasPublished`, participants, favorites, and certificate grants. |
 
-## 3. Wireframes
+Usernames are unique within each role. The same username can have separate Admin, Organizer, and Volunteer accounts. Sign-in selects the matching username and role, then checks that account's password.
 
-### Discover activities and view details
+Each participant contains `volunteerId`, `status` (`Registered` or `Cancelled`), and `attendance` (`Unmarked`, `Attended`, or `Absent`). Cancellation keeps the history; rejoining uses the same participant entry. `registeredCount` and `availablePlaces` are calculated from active participants rather than saved counters.
 
-![Desktop discovery and campaign detail wireframes](assets/wireframes/08-wireframes-discovery-details.svg)
+Favorites and certificates contain User IDs. Certificates are granted only to attendees of completed campaigns. A PDF is generated when requested, using the current volunteer, campaign, organization, and activity date. There is no separate certificate model or stored PDF file.
 
-### Signup, login, and profile
+Country is `BH`. Governorates are Capital, Northern, Southern, and Muharraq; Riffa belongs in the area field. Dates are stored in UTC, while inputs and displayed times use Bahrain time (`Asia/Bahrain`, UTC+3).
 
-![Signup, login, and profile wireframes](assets/wireframes/09-wireframes-accounts.svg)
+### Workflow
 
-### Organization profile and setup
+1. An organizer creates an organization, which enters Pending review. Saving changes sends it for review again.
+2. Campaigns begin as Draft. An approved organization can submit a campaign for admin review.
+3. Admins approve or reject pending campaigns, or remove published content with feedback. Public campaign pages require both an approved campaign and an approved organization.
+4. Volunteers join upcoming campaigns with available places, cancel before the start, and save favorites.
+5. Editing an approved campaign before its start returns it to Pending without removing participants. `wasPublished` stays true. Only never-published campaigns without participant history can be deleted; published campaigns can be cancelled.
+6. After an approved activity ends, the organizer records attendance and completes it once all active participants are marked. The organizer can then grant certificates to attendees. Attendance is locked while a certificate is granted.
+7. Volunteers keep their participation history even when a campaign becomes unavailable publicly. Unavailable favorites can still be removed.
 
-![Organization profile and settings wireframes](assets/wireframes/10-wireframes-organizations.svg)
+## 3. Application pages
 
-### Organizer dashboard and campaign form
+| Audience | Routes |
+| --- | --- |
+| Public | `/`, `/campaigns`, `/campaigns/:id`, `/organizations`, `/organizations/:id`, `/organizations/:orgId/campaigns`, `/sign-up`, `/sign-in` |
+| Signed-in accounts | `/profile` |
+| Volunteers | `/my/registrations`, `/my/favorites`, `/my/certificates` |
+| Organizers | `/organizer`, `/organizer/organization`, `/organizer/campaigns`, `/organizer/campaigns/new`, `/organizer/campaigns/:id/edit`, `/organizer/campaigns/:id/participants` |
+| Admins | `/admin` |
 
-![Organizer dashboard and campaign editor wireframes](assets/wireframes/11-wireframes-campaign-management.svg)
-
-### Participants, attendance, and certificates
-
-![Participant attendance and certificate action wireframes](assets/wireframes/12-wireframes-attendance-certificates.svg)
-
-### Volunteer activities and certificates
-
-![Volunteer activities and certificate preview wireframes](assets/wireframes/13-wireframes-volunteer.svg)
-
-### Admin review
-
-![Organization and campaign admin review wireframes](assets/wireframes/14-wireframes-admin.svg)
-
-### Mobile behavior and shared states
-
-![Mobile discovery and campaign details wireframes](assets/wireframes/15-wireframes-mobile.svg)
+Discovery uses simple React state and array filtering for activity/organization search, governorate, area, category, and an inclusive activity-start date range. Results show six campaigns per page. The website uses plain forms and existing styling.
 
 ## 4. Routes
 
-### Backend route charts
+All paths below are relative to the backend URL. Protected requests use the existing `Authorization: Bearer <token>` header. JSON errors use `{ "error": "message" }`.
 
-![Authentication routes](assets/routes/01-auth.svg)
+### Accounts and organizations
 
-![Organizations routes](assets/routes/02-organizations.svg)
+| Method | Path | Purpose |
+| --- | --- | --- |
+| POST | `/auth/sign-up` | Create a Volunteer or Organizer account; return user and token. |
+| POST | `/auth/sign-in` | Sign in with username, password, and selected role; return user and token. |
+| GET / PUT | `/auth/me` | Read the current account or update name/city. |
+| GET | `/organizations` | List approved organizations. |
+| GET | `/organizations/mine` | Read the organizer's organization, or `null` before setup. |
+| GET | `/organizations/review` | Admin organization review list. |
+| GET | `/organizations/:id` | Read an approved organization. |
+| POST | `/organizations` | Create an organization. |
+| PUT | `/organizations/:id` | Save organization changes and return to Pending. |
+| PUT | `/organizations/:id/review` | Admin decision with `status` and `reviewReason`. |
+| DELETE | `/organizations/:id` | Delete the owned organization only when it has no campaigns. |
 
-![Campaigns routes](assets/routes/03-campaigns.svg)
+### Campaigns
 
-![Registrations routes](assets/routes/06-registrations.svg)
+| Method | Path | Purpose |
+| --- | --- | --- |
+| GET / POST | `/campaigns` | Public approved list / create an organizer draft. |
+| GET | `/campaigns/mine`, `/campaigns/mine/:id` | Organizer list and private campaign detail. |
+| GET | `/campaigns/review`, `/campaigns/review/:id` | Admin list and private campaign detail. |
+| GET | `/campaigns/activities` | Current volunteer's participation history. |
+| GET | `/campaigns/favorites` | Current volunteer's favorites; hidden campaigns return an unavailable entry. |
+| GET | `/campaigns/certificates` | Current volunteer's granted certificates. |
+| GET / PUT / DELETE | `/campaigns/:id` | Public detail / owner edit / delete an unused unpublished campaign. |
+| POST | `/campaigns/:id/submit` | Submit a draft or rejected campaign for review. |
+| POST | `/campaigns/:id/cancel` | Cancel a published campaign. |
+| POST | `/campaigns/:id/complete` | Complete an ended campaign with attendance recorded. |
+| PUT | `/campaigns/:id/review` | Admin decision with `status` and `reviewReason`. |
+| GET / POST | `/campaigns/:id/participants` | Organizer participants / volunteer joining. |
+| DELETE | `/campaigns/:id/participants/me` | Cancel the current volunteer's registration. |
+| PUT | `/campaigns/:id/participants/:volunteerId` | Update `attendance`. |
+| PUT / DELETE | `/campaigns/:id/favorite` | Save / remove a favorite. |
+| PUT / DELETE | `/campaigns/:id/certificates/:volunteerId` | Grant / remove a certificate. |
+| GET | `/campaigns/:id/certificate` | Generate the current volunteer's granted PDF certificate. |
+| POST | `/uploads` | Organizer image upload as multipart field `image`; returns `{ url, publicId }`. |
 
 ## 5. Component hierarchy
 
-![React component hierarchy](assets/components/07-component-hierarchy.svg)
+`App` provides routes under `UserContext` and the shared `NavBar`. Each page loads its own data through named service functions.
 
-#
+- Discovery: `ExplorePage` → `CampaignGrid` → `CampaignCard`.
+- Public details: `CampaignDetail` and `OrganizationDetail` use `OrganizationContacts`.
+- Organizer: `OrganizationProfile` → `OrganizationForm` / `OrganizationView`; `CampaignManager`, `CampaignForm`, and `CampaignParticipants` handle campaign work.
+- Volunteer: `VolunteerDashboard`, `Favorites`, and `Certificates` show personal records.
+- Admin: `AdminDashboard` switches between `OrganizationReview` and `CampaignReview`.
+- Shared: `ImagePicker` previews selected images; date utilities handle Bahrain input/display conversion.
 
-### Next steps
+## Local setup and deployment
+
+### Backend
+
+1. In `TatawwuBackend`, install dependencies with `npm install`.
+2. Create `.env` using `.env.example` and set `MONGODB_URI`, `JWT_SECRET`, `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, and `CLOUDINARY_API_SECRET`.
+3. Use `npm run dev` locally, or `npm start` on the deployment host. The server listens on `PORT`, defaulting to `3000`.
+
+This version targets fresh development data. It does not migrate, reset, or delete an existing database. Signup creates Volunteer or Organizer accounts. To provision an admin, create an account and set its `role` to `Admin` in your own MongoDB administration tool, then sign in again with Admin selected. To use Volunteer with the same username as well, create a separate Volunteer account; changing a role does not create another account.
+
+The User model defines a unique compound index on `username` and `role`. Fresh databases need no index changes. For an existing database, confirm the `username_1_role_1` index exists, then remove only the old unique `username_1` index, if present: `db.users.dropIndex("username_1")`. This permits the same username across roles without removing account records.
+
+### Frontend
+
+1. In `tatawuu-frontend`, install dependencies with `npm install`.
+2. Create `.env` using `.env.example`. Set `VITE_BACK_END_SERVER_URL` to the backend origin without a trailing slash, for example `http://localhost:3000`.
+3. Use `npm run dev` for local development.
+4. For deployment, set `VITE_BACK_END_SERVER_URL` to the deployed HTTPS backend URL before the frontend build. Use `npm run build`, with `dist` as the output directory. The existing `vercel.json` rewrite supports direct links to React pages.
+
+### Images and certificates
+
+Cloudinary credentials belong in the backend environment. Images pass through Multer memory storage to Cloudinary; no server uploads folder is used. The database stores the HTTPS URL and public ID. Replacing/removing an image updates the record before deleting the old Cloudinary asset. A failed upload or save leaves the previously saved image intact.
+
+PDFKit streams certificates directly to the HTTP response. The frontend previews/downloads the received PDF using a temporary browser blob URL and releases it afterward. PDFs do not depend on persistent server storage.
+
+Cloudinary account configuration and deployment environment values must be supplied before deploying. No deployment is performed by the code changes.
+
+### Mock development data
+
+The configured development database contains 12 demo accounts, 7 demo organizations, and 18 demo campaigns added on 16 September 2026. Existing records were preserved. This data is fictional and is not added automatically at server startup.
+
+Use username **`demo_tatawwu`** and password **`TatawwuDemo2026!`**, then choose **Admin**, **Organizer**, or **Volunteer** on the sign-in form. These are three separate accounts sharing a username and demo password.
+
+Other organizer usernames are `demo_muharraq`, `demo_southern`, `demo_northern`, `demo_pending`, `demo_rejected`, and `demo_removed`. Other volunteer usernames are `demo_omar`, `demo_noor`, and `demo_ali`. All use the same demo password above.
+
+The examples cover all four governorates, organization review statuses, campaign lifecycle statuses, upcoming and past activities, a full campaign, cancelled registrations, favorites, attendance, and a granted certificate. Upcoming dates run from 18 September to 3 October 2026. The main organizer owns the attendance and certificate examples; the main volunteer has participation history and a certificate to preview/download.
+
+Demo images use Cloudinary's public sample URL with empty public IDs. They demonstrate image display without requiring an upload or deleting the shared sample asset. Configure your own Cloudinary environment values to upload new images.
+
+### Implementation review
+
+Verification completed on 16 September 2026:
+
+- Frontend: 46 automated tests passed; lint and the production build passed. Browser checks covered real role sign-in, discovery filters/pagination, participation, favorites, certificates, organizer participants, and admin review.
+- Backend: 157 live API requests passed 306 assertions across nine workflow sections. Eight additional mocked Cloudinary assertions and syntax checks for all 16 backend JavaScript files passed.
+- Fixes included role-based login redirects, preserving campaign images during text edits, handling image cleanup errors after successful saves, preventing simultaneous joins from overfilling a campaign, and showing missing organizations in admin review without crashing.
+- Temporary test files, temporary testing dependencies, and temporary database fixtures were removed after verification. Demo data remains. No Git commands were used.
+
+Live Cloudinary upload success was not verified because credentials are not configured. Mocked provider success/failure and the actual multipart missing-configuration response were checked. PDF responses were generated by the real backend; the frontend also shows plain certificate text alongside the PDF for browsers without an embedded PDF viewer.
+
+### Future work
 
 - Arabic translation and right-to-left layouts.
-- Volunteer badges and a leaderboard with agreed award rules.
-- Tracked volunteer hours and automatic certificates after a defined threshold.
-- Admin user-management views.
-
-These preserve the colleague’s additional ideas as stretch goals. They have no version-one models, endpoints, or active wireframe controls. Version one grants certificates only when the owning organizer chooses to issue them for eligible attendees.
+- Volunteer badges and leaderboard.
+- Tracked volunteer hours and automatic certificates.
+- Admin user-management pages.
 
 ### Technical references
 
 - [MongoDB](https://www.mongodb.com/docs/)
-- [Cloudinary](https://cloudinary.com/documentation/)
+- [Cloudinary Node uploads](https://cloudinary.com/documentation/node_image_and_video_upload)
+- [PDFKit](https://pdfkit.org/docs/getting_started.html)
