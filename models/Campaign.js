@@ -48,6 +48,8 @@ const campaignSchema = new mongoose.Schema(
     area: { type: String, required: true },
     venue: { type: String, required: true },
     address: { type: String, required: true },
+    latitude: { type: Number, min: -90, max: 90, default: null },
+    longitude: { type: Number, min: -180, max: 180, default: null },
     startsAt: { type: Date, required: true },
     endsAt: { type: Date, required: true },
     capacity: { type: Number, required: true, min: 1 },
