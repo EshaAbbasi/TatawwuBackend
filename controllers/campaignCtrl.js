@@ -1,8 +1,9 @@
 const Campaign = require("../models/Campaign");
 const Organization = require("../models/organization");
 const User = require("../models/user");
-const PDFDocument = require("pdfkit");
+const createCertificate = require("../utils/createCertificate");
 const cloudinary = require("../config/cloudinary");
+const setCoordinates = require("../utils/setCoordinates");
 
 const findOwnCampaign = async (id, user) => {
   const campaign = await Campaign.findById(id).populate("organizationId");
@@ -140,6 +141,7 @@ const create = async (req, res) => {
       coverImage: req.body.coverImage,
       coverImagePublicId: req.body.coverImagePublicId,
     });
+    setCoordinates(campaign, req.body);
     checkDetails(campaign);
     await campaign.save();
     await campaign.populate("organizationId");
@@ -169,6 +171,7 @@ const update = async (req, res) => {
     campaign.startsAt = req.body.startsAt;
     campaign.endsAt = req.body.endsAt;
     campaign.capacity = req.body.capacity;
+    setCoordinates(campaign, req.body);
     if (req.body.coverImage !== undefined) {
       campaign.coverImage = req.body.coverImage;
       campaign.coverImagePublicId = req.body.coverImagePublicId || "";
@@ -520,25 +523,16 @@ const certificate = async (req, res) => {
       return res.status(404).json({ error: "Certificate not found" });
     }
     const volunteer = await User.findById(req.user._id);
-    const date = campaign.endsAt.toLocaleDateString("en-GB", {
-      timeZone: "Asia/Bahrain",
-      day: "numeric",
-      month: "long",
-      year: "numeric",
+    if (!volunteer) return res.status(404).json({ error: "Volunteer not found" });
+    const document = createCertificate({
+      recipientName: volunteer.name || volunteer.username,
+      campaignTitle: campaign.title,
+      organizationName: campaign.organizationId ? campaign.organizationId.name : "",
+      endsAt: campaign.endsAt,
     });
-    const document = new PDFDocument();
     res.setHeader("Content-Type", "application/pdf");
     res.setHeader("Content-Disposition", `inline; filename="certificate-${campaign._id}.pdf"`);
     document.pipe(res);
-    document.fontSize(24).text("Certificate of Participation");
-    document.moveDown();
-    document.fontSize(14).text(`Presented to ${volunteer.name || volunteer.username}`);
-    document.moveDown();
-    document.text(`For participating in ${campaign.title}.`);
-    if (campaign.organizationId) document.text(`Organized by ${campaign.organizationId.name}.`);
-    document.text(`Campaign completed on ${date} (Bahrain time).`);
-    document.moveDown();
-    document.text("Tatawwu' - Volunteering in Bahrain");
     document.end();
   } catch (error) {
     res.status(400).json({ error: error.message });
