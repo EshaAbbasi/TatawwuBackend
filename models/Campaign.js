@@ -1,5 +1,23 @@
 const mongoose = require("mongoose");
 
+const participantSchema = new mongoose.Schema({
+  volunteerId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
+  status: {
+    type: String,
+    enum: ["Registered", "Cancelled"],
+    default: "Registered",
+  },
+  attendance: {
+    type: String,
+    enum: ["Unmarked", "Attended", "Absent"],
+    default: "Unmarked",
+  },
+});
+
 const campaignSchema = new mongoose.Schema(
   {
     organizationId: {
@@ -7,14 +25,8 @@ const campaignSchema = new mongoose.Schema(
       ref: "Organization",
       required: true,
     },
-    title: {
-      type: String,
-      required: true,
-    },
-    description: {
-      type: String,
-      required: true,
-    },
+    title: { type: String, required: true },
+    description: { type: String, required: true },
     category: {
       type: String,
       enum: [
@@ -27,43 +39,20 @@ const campaignSchema = new mongoose.Schema(
       ],
       required: true,
     },
-    country: {
-      type: String,
-      fixed: "BH",
-    },
+    country: { type: String, enum: ["BH"], default: "BH" },
     governorate: {
       type: String,
-      enum: ["Capital", "Northern", "Southern", "Muharraq", "Riffa"],
+      enum: ["Capital", "Northern", "Southern", "Muharraq"],
       required: true,
     },
-    address: {
-      type: String,
-      required: true,
-    },
-    startDate: {
-      type: Date,
-      required: true,
-    },
-    endDate: {
-      type: Date,
-      required: true,
-    },
-    startsAt: {
-      type: Date,
-      required: true,
-    },
-    endsAt: {
-      type: Date,
-      required: true,
-    },
-    capacity: {
-      type: Number,
-      required: true,
-    },
-    registeredCount: {
-      type: Number,
-      default: 0,
-    },
+    area: { type: String, required: true },
+    venue: { type: String, required: true },
+    address: { type: String, required: true },
+    startsAt: { type: Date, required: true },
+    endsAt: { type: Date, required: true },
+    capacity: { type: Number, required: true, min: 1 },
+    coverImage: { type: String, default: "" },
+    coverImagePublicId: { type: String, default: "" },
     status: {
       type: String,
       enum: [
@@ -75,27 +64,25 @@ const campaignSchema = new mongoose.Schema(
         "Completed",
         "Cancelled",
       ],
-      default: "Pending",
+      default: "Draft",
     },
-    reviewReason: {
-      type: String,
-    },
-    favorites: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-      },
-    ],
-    certificates: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-      },
-    ],
+    reviewReason: { type: String, default: "" },
+    wasPublished: { type: Boolean, default: false },
+    participants: [participantSchema],
+    favorites: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+    certificates: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
   },
-  { timestamps: true },
+  { timestamps: true, optimisticConcurrency: true, toJSON: { virtuals: true } },
 );
 
-const Campaign = mongoose.model("Campaign", campaignSchema);
+campaignSchema.virtual("registeredCount").get(function () {
+  return this.participants.filter(
+    (participant) => participant.status === "Registered",
+  ).length;
+});
 
-module.exports = Campaign;
+campaignSchema.virtual("availablePlaces").get(function () {
+  return this.capacity - this.registeredCount;
+});
+
+module.exports = mongoose.model("Campaign", campaignSchema);
