@@ -1,6 +1,7 @@
 const Organization = require("../models/organization");
 const Campaign = require("../models/Campaign");
 const cloudinary = require("../config/cloudinary");
+const setCoordinates = require("../utils/setCoordinates");
 
 const removeLogo = async (publicId) => {
   if (!publicId) return;
@@ -21,7 +22,7 @@ const create = async (req, res) => {
       return res.status(400).json({ error: "You already have an organization" });
     }
 
-    const organization = await Organization.create({
+    const organization = new Organization({
       ownerId: req.user._id,
       name: req.body.name,
       description: req.body.description,
@@ -37,6 +38,8 @@ const create = async (req, res) => {
       logoPublicId: req.body.logoPublicId,
       status: "Pending",
     });
+    setCoordinates(organization, req.body);
+    await organization.save();
     res.status(201).json(organization);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -98,6 +101,7 @@ const update = async (req, res) => {
     organization.governorate = req.body.governorate;
     organization.area = req.body.area;
     organization.address = req.body.address;
+    setCoordinates(organization, req.body);
     organization.contactEmail = req.body.contactEmail;
     organization.contactPhone = req.body.contactPhone;
     organization.whatsappNumber = req.body.whatsappNumber;
