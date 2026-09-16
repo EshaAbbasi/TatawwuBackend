@@ -17,11 +17,12 @@ const organizationSchema = new mongoose.Schema(
     },
     country: {
       type: String,
-      fixed: "BH",
+      enum: ["BH"],
+      default: "BH",
     },
     governorate: {
       type: String,
-      enum: ["Capital", "Northern", "Southern", "Muharraq", "Riffa"],
+      enum: ["Capital", "Northern", "Southern", "Muharraq"],
       required: true,
     },
     area: {
@@ -34,6 +35,7 @@ const organizationSchema = new mongoose.Schema(
     },
     contactEmail: {
       type: String,
+      required: true,
     },
     contactPhone: {
       type: String,
@@ -46,22 +48,20 @@ const organizationSchema = new mongoose.Schema(
     },
     logo: {
       type: String,
+      default: "",
+    },
+    logoPublicId: {
+      type: String,
+      default: "",
     },
     status: {
       type: String,
-      enum: [
-        "Draft",
-        "Pending",
-        "Approved",
-        "Rejected",
-        "Removed",
-        "Completed",
-        "Cancelled",
-      ],
+      enum: ["Pending", "Approved", "Rejected", "Removed"],
       default: "Pending",
     },
     reviewReason: {
       type: String,
+      default: "",
     },
   },
   { timestamps: true },
