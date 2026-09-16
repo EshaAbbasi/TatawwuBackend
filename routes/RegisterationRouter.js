@@ -5,6 +5,7 @@ const RegisterationCtrl = require("../controllers/RegisterationCtrl");
 
 // Routes
 router.get("/", RegisterationCtrl.index);
+router.get("/campaign/:campaignId", RegisterationCtrl.byCampaign);
 router.get("/:id", RegisterationCtrl.show);
 router.post("/", RegisterationCtrl.create);
 router.put("/:id", RegisterationCtrl.update);

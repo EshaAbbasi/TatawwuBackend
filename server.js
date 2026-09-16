@@ -33,12 +33,13 @@ app.use(logger("dev"));
 app.use("/auth", authRouter);
 app.use("/campaigns", campaignRouter);
 app.use("/organizations", orgnaizationRouter);
+app.use("/Registeration", registerationRouter);
 
 // PROTECTED
 app.use(isSignedIn);
 // Admin access
 app.use(isAdmin);
-app.use("/Registeration", registerationRouter);
+
 
 app.listen(3000, "0.0.0.0", () => {
   console.log(`The express app is ready on port!`);
