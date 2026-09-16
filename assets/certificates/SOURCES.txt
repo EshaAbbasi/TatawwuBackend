@@ -1,0 +1,10 @@
+Bahrain coat of arms
+Author: Government of Bahrain
+Source: https://commons.wikimedia.org/wiki/File:Coat_of_Arms_of_The_Kingdom_of_Bahrain.svg
+Original source listed by Commons: https://www.bahrain.bh/new/assets/images/bahrain.svg
+Commons license: CC0 1.0 Universal
+PNG: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Coat_of_Arms_of_The_Kingdom_of_Bahrain.svg/500px-Coat_of_Arms_of_The_Kingdom_of_Bahrain.svg.png
+
+Noto Sans Arabic Regular, Noto Sans Regular, and Noto Sans Bold
+Source: https://github.com/notofonts/arabic
+Packaged from fonts-noto-core (system font); see ../fonts/NotoSansArabic-LICENSE.txt.
