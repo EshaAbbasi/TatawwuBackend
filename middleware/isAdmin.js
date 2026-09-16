@@ -1,22 +1,8 @@
-const jwt = require("jsonwebtoken");
-
-const isSignedIn = (req, res, next) => {
-  try {
-    const brearerToken = req.headers.authorization;
-
-    if (!brearerToken) throw new Error("Login Required");
-
-    const token = brearerToken.split(" ")[1];
-
-    const payload = jwt.verify(token, process.env.JWT_SECRET);
-
-    if (payload.role !== "admin") {
-      return res.status(403).json({ err: "Admin Access Required" });
-    }
-    next();
-  } catch (err) {
-    res.status(401).json({ err: "Login Required" });
+const isAdmin = (req, res, next) => {
+  if (req.user.role !== "Admin") {
+    return res.status(403).json({ error: "Admin access required" });
   }
+  next();
 };
 
-module.exports = isSignedIn;
+module.exports = isAdmin;
