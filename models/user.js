@@ -9,6 +9,14 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  name: {
+    type: String,
+    required: true,
+  },
+  city: {
+    type: String,
+    default: "",
+  },
   role: {
     type: String,
     enum: ["Admin", "Volunteer", "Organizer"],
@@ -17,12 +25,12 @@ const userSchema = new mongoose.Schema({
   },
 });
 
+userSchema.index({ username: 1, role: 1 }, { unique: true });
+
 userSchema.set("toJSON", {
   transform: (document, userObj) => {
     delete userObj.password;
   },
 });
 
-const User = mongoose.model("User", userSchema);
-
-module.exports = User;
+module.exports = mongoose.model("User", userSchema);
