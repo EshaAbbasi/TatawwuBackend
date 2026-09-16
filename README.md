@@ -77,8 +77,8 @@ The application uses **three MongoDB models**. Participants are embedded in Camp
 | Model | Main fields and relationships |
 | --- | --- |
 | User | `username`, hashed `password`, `name`, optional `city`, and `role` (`Volunteer`, `Organizer`, `Admin`). |
-| Organization | One `ownerId` referencing User; name, description, Bahrain location, public contacts, `logo`, `logoPublicId`, status, and review feedback. |
-| Campaign | `organizationId`, title, description, category, Bahrain location, venue, `startsAt`, `endsAt`, capacity, cover image/public ID, status, `wasPublished`, participants, favorites, and certificate grants. |
+| Organization | One `ownerId` referencing User; name, description, Bahrain location, public contacts, `logo`, `logoPublicId`, optional `latitude`/`longitude`, status, and review feedback. |
+| Campaign | `organizationId`, title, description, category, Bahrain location, venue, `startsAt`, `endsAt`, capacity, optional `latitude`/`longitude`, cover image/public ID, status, `wasPublished`, participants, favorites, and certificate grants. |
 
 Usernames are unique within each role. The same username can have separate Admin, Organizer, and Volunteer accounts. Sign-in selects the matching username and role, then checks that account's password.
 
@@ -108,7 +108,7 @@ Country is `BH`. Governorates are Capital, Northern, Southern, and Muharraq; Rif
 | Organizers | `/organizer`, `/organizer/organization`, `/organizer/campaigns`, `/organizer/campaigns/new`, `/organizer/campaigns/:id/edit`, `/organizer/campaigns/:id/participants` |
 | Admins | `/admin` |
 
-Discovery uses simple React state and array filtering for activity/organization search, governorate, area, category, and an inclusive activity-start date range. Results show six campaigns per page. The website uses plain forms and existing styling.
+Discovery uses simple React state and array filtering for activity/organization search, governorate, area, category, and an inclusive activity-start date range. Results show six campaigns per page. Search and Clear filters remain visible; Show filters / Hide filters toggles governorate, area, category, and date inputs without clearing selections. Changing or clearing filters resets pagination. The website uses plain forms with styling limited to certificates, maps, and language direction.
 
 ## 4. Routes
 
@@ -155,14 +155,14 @@ All paths below are relative to the backend URL. Protected requests use the exis
 
 ## 5. Component hierarchy
 
-`App` provides routes under `UserContext` and the shared `NavBar`. Each page loads its own data through named service functions.
+`App` provides routes under `UserContext` and `LanguageContext`, with the shared `NavBar`. Each page loads its own data through named service functions.
 
 - Discovery: `ExplorePage` → `CampaignGrid` → `CampaignCard`.
 - Public details: `CampaignDetail` and `OrganizationDetail` use `OrganizationContacts`.
 - Organizer: `OrganizationProfile` → `OrganizationForm` / `OrganizationView`; `CampaignManager`, `CampaignForm`, and `CampaignParticipants` handle campaign work.
 - Volunteer: `VolunteerDashboard`, `Favorites`, and `Certificates` show personal records.
 - Admin: `AdminDashboard` switches between `OrganizationReview` and `CampaignReview`.
-- Shared: `ImagePicker` previews selected images; date utilities handle Bahrain input/display conversion.
+- Shared: `ImagePicker` previews images; `MapPicker` selects optional coordinates; `LocationMap` shows saved locations and directions. Date utilities handle Bahrain input/display conversion.
 
 ## Local setup and deployment
 
@@ -187,9 +187,21 @@ The User model defines a unique compound index on `username` and `role`. Fresh d
 
 Cloudinary credentials belong in the backend environment. Images pass through Multer memory storage to Cloudinary; no server uploads folder is used. The database stores the HTTPS URL and public ID. Replacing/removing an image updates the record before deleting the old Cloudinary asset. A failed upload or save leaves the previously saved image intact.
 
-PDFKit streams certificates directly to the HTTP response. The frontend previews/downloads the received PDF using a temporary browser blob URL and releases it afterward. PDFs do not depend on persistent server storage.
+PDFKit streams an A4 landscape certificate directly to the HTTP response. The template has a white background, Bahrain-red border and flag accents, and the official Bahrain coat of arms. Certificate labels remain English in both website languages; volunteer, campaign, and organization names remain as entered. The coat of arms, Arabic font, and source/license notices are bundled with the backend for deployment. The frontend previews/downloads the received PDF using a temporary browser blob URL and releases it afterward, with a matching HTML preview for browsers without a PDF viewer. PDFs do not depend on persistent server storage.
 
 Cloudinary account configuration and deployment environment values must be supplied before deploying. No deployment is performed by the code changes.
+
+### Language and location
+
+The navbar switches between English and العربية. The browser remembers the language; English is the default. Arabic changes the interface to right-to-left across public pages and all dashboards. User-written names, descriptions, and review feedback are not automatically translated. API roles, categories, governorates, and statuses keep their English values. Display dates use the selected language with the Gregorian calendar and Bahrain time; stored dates and date-filter comparisons stay unchanged.
+
+Campaign and organization forms include an optional Leaflet map picker. Click the map, drag the pin, or pan with the keyboard and choose Use map center. Remove pin clears the selected coordinates. Campaigns can explicitly copy the organization's location, and subsequent changes remain independent. The written address is still required. Public and private details show a saved pin and Get directions; records without coordinates use the written address in Google Maps.
+
+Existing organization and campaign create/update/read endpoints accept and return optional numeric `latitude` and `longitude`. Supply both numbers together, omit both on update to preserve them, or send both as `null` to remove them. Existing records need no migration. There is no geocoding service, location permission prompt, or Google API key requirement.
+
+The shared WhatsApp contact link shows the phone number and redirect icon. Eight-digit Bahrain numbers receive the `973` prefix for the link; international numbers retain their country code.
+
+Maps use Leaflet 1.9.4 with OpenStreetMap tiles and visible attribution. Frontend `.env.example` documents optional `VITE_MAP_TILE_URL` and `VITE_MAP_ATTRIBUTION` overrides; change both together for a different tile provider. For deployment, follow the [OpenStreetMap tile policy](https://operations.osmfoundation.org/policies/tiles/): retain attribution and browser referrers, respect normal HTTP caching, and do not prefetch tiles or offer offline tile downloads. The public tile service has no availability guarantee; select a suitable provider if traffic grows. A map failure does not prevent saving the form's written address.
 
 ### Mock development data
 
@@ -205,18 +217,24 @@ Demo images use Cloudinary's public sample URL with empty public IDs. They demon
 
 ### Implementation review
 
-Verification completed on 16 September 2026:
+Initial implementation verification completed on 16 September 2026:
 
 - Frontend: 46 automated tests passed; lint and the production build passed. Browser checks covered real role sign-in, discovery filters/pagination, participation, favorites, certificates, organizer participants, and admin review.
 - Backend: 157 live API requests passed 306 assertions across nine workflow sections. Eight additional mocked Cloudinary assertions and syntax checks for all 16 backend JavaScript files passed.
 - Fixes included role-based login redirects, preserving campaign images during text edits, handling image cleanup errors after successful saves, preventing simultaneous joins from overfilling a campaign, and showing missing organizations in admin review without crashing.
 - Temporary test files, temporary testing dependencies, and temporary database fixtures were removed after verification. Demo data remains. No Git commands were used.
 
-Live Cloudinary upload success was not verified because credentials are not configured. Mocked provider success/failure and the actual multipart missing-configuration response were checked. PDF responses were generated by the real backend; the frontend also shows plain certificate text alongside the PDF for browsers without an embedded PDF viewer.
+The Arabic/maps/certificate follow-up was also verified on 16 September 2026:
+
+- 31 frontend tests passed, including language persistence/RTL, all role sign-ins, English API enum values, filter collapse/pagination, WhatsApp links, map coordinates and tile-error recovery, and English certificate controls. Frontend lint and production build passed.
+- 48 backend API/helper checks passed for coordinate pairs, omitted values, clearing, older records, certificate eligibility/grants/revocation, and actual PDF responses. Tests used an isolated synthetic database; the configured application data was preserved.
+- Certificate renders were visually checked with English, Arabic, mixed-script, long, unbroken, and empty fields. Browser checks covered real Arabic pages, pin selection/dragging/removal, saved language, directions links, and the certificate preview.
+- All temporary test scripts, test dependencies, fixtures, and PDF inspection files were removed afterward. Packaged certificate artwork and fonts remain as application assets.
+
+Live Cloudinary upload success was not verified because credentials are not configured. Mocked provider success/failure and the actual multipart missing-configuration response were checked. PDF responses were generated by the real backend; the frontend also shows a styled English certificate preview alongside the PDF for browsers without an embedded PDF viewer.
 
 ### Future work
 
-- Arabic translation and right-to-left layouts.
 - Volunteer badges and leaderboard.
 - Tracked volunteer hours and automatic certificates.
 - Admin user-management pages.
@@ -226,3 +244,6 @@ Live Cloudinary upload success was not verified because credentials are not conf
 - [MongoDB](https://www.mongodb.com/docs/)
 - [Cloudinary Node uploads](https://cloudinary.com/documentation/node_image_and_video_upload)
 - [PDFKit](https://pdfkit.org/docs/getting_started.html)
+- [Leaflet quick start](https://leafletjs.com/examples/quick-start/)
+- [Google Maps directions URLs](https://developers.google.com/maps/documentation/urls/get-started)
+- [Bahrain coat of arms source](https://commons.wikimedia.org/wiki/File:Coat_of_Arms_of_The_Kingdom_of_Bahrain.svg)
