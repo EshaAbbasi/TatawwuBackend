@@ -1,5 +1,6 @@
 const express = require("express");
 const campaignCtrl = require("../controllers/campaignCtrl");
+const campaignUpdateCtrl = require("../controllers/campaignUpdateCtrl");
 const isSignedIn = require("../middleware/isSignedIn");
 const isAdmin = require("../middleware/isAdmin");
 
@@ -8,12 +9,18 @@ const router = express.Router();
 router.get("/", campaignCtrl.index);
 router.post("/", isSignedIn, campaignCtrl.create);
 router.get("/mine", isSignedIn, campaignCtrl.mine);
+router.get("/mine/:id/updates", isSignedIn, campaignUpdateCtrl.mine);
 router.get("/mine/:id", isSignedIn, campaignCtrl.showOwn);
 router.get("/review", isSignedIn, isAdmin, campaignCtrl.reviewList);
 router.get("/review/:id", isSignedIn, isAdmin, campaignCtrl.showReview);
 router.get("/activities", isSignedIn, campaignCtrl.activities);
 router.get("/favorites", isSignedIn, campaignCtrl.favorites);
 router.get("/certificates", isSignedIn, campaignCtrl.certificates);
+
+router.get("/:id/updates", campaignUpdateCtrl.index);
+router.post("/:id/updates", isSignedIn, campaignUpdateCtrl.create);
+router.put("/:id/updates/:updateId", isSignedIn, campaignUpdateCtrl.update);
+router.delete("/:id/updates/:updateId", isSignedIn, campaignUpdateCtrl.remove);
 
 router.post("/:id/submit", isSignedIn, campaignCtrl.submit);
 router.post("/:id/cancel", isSignedIn, campaignCtrl.cancel);

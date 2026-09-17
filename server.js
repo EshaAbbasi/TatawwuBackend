@@ -21,6 +21,4 @@ app.use("/organizations", organizationRouter);
 app.use("/uploads", uploadRouter);
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, "0.0.0.0", () => {
-  console.log(`The express app is ready on port ${PORT}!`);
-});
+app.listen(PORT, "0.0.0.0");

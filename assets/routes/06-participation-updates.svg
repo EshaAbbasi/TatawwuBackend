@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1150" height="607" viewBox="0 0 1150 607" role="img" aria-labelledby="title">
+<title id="title">Tatawwu — participation, certificates, and updates routes</title>
+<rect width="100%" height="100%" fill="#f8f3e9"/>
+<g font-family="Arial, sans-serif" fill="#582337">
+<text x="35" y="55" font-size="28" font-weight="bold">Tatawwu — participation, certificates, and updates routes</text>
+<text x="35" y="105" font-size="19">GET /campaigns/activities | /campaigns/favorites | /campaigns/certificates — personal lists</text>
+<text x="35" y="147" font-size="19">GET /campaigns/:id/participants — owning organizer participant list</text>
+<text x="35" y="189" font-size="19">POST /campaigns/:id/participants — volunteer joins; DELETE /:id/participants/me — cancels</text>
+<text x="35" y="231" font-size="19">PUT /campaigns/:id/participants/:volunteerId — organizer records attendance</text>
+<text x="35" y="273" font-size="19">PUT / DELETE /campaigns/:id/favorite — volunteer saves/removes a favorite</text>
+<text x="35" y="315" font-size="19">PUT / DELETE /campaigns/:id/certificates/:volunteerId — organizer grants/revokes</text>
+<text x="35" y="357" font-size="19">GET /campaigns/:id/certificate — eligible current volunteer receives PDF</text>
+<text x="35" y="399" font-size="19">GET /campaigns/:id/updates — public approved campaign + approved organization</text>
+<text x="35" y="441" font-size="19">GET /campaigns/mine/:id/updates — owning organizer, every status</text>
+<text x="35" y="483" font-size="19">POST /campaigns/:id/updates — owning organizer creates { text }</text>
+<text x="35" y="525" font-size="19">PUT / DELETE /campaigns/:id/updates/:updateId — owning author edits/removes</text>
+</g>
+</svg>

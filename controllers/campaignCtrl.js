@@ -1,4 +1,5 @@
 const Campaign = require("../models/Campaign");
+const CampaignUpdate = require("../models/campaignUpdate");
 const Organization = require("../models/organization");
 const User = require("../models/user");
 const createCertificate = require("../utils/createCertificate");
@@ -37,8 +38,8 @@ const removeImage = async (publicId) => {
   if (!publicId) return;
   try {
     await cloudinary.uploader.destroy(publicId);
-  } catch (error) {
-    console.log("Unable to remove the previous campaign image:", error.message);
+  } catch {
+    return;
   }
 };
 
@@ -198,6 +199,7 @@ const deleteCampaign = async (req, res) => {
     if (campaign.wasPublished || campaign.participants.length > 0) {
       return res.status(400).json({ error: "Only unused unpublished campaigns can be deleted" });
     }
+    await CampaignUpdate.deleteMany({ campaignId: campaign._id });
     await campaign.deleteOne();
     await removeImage(campaign.coverImagePublicId);
     res.status(204).end();
