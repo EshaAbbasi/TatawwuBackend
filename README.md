@@ -1,8 +1,14 @@
-# Tatawwu’ — Volunteering in Bahrain
+# Tatawwu' — Volunteering in Bahrain
 
-![Tatawwu wordmark: volunteering in Bahrain](assets/tatawwu-logo.svg)
+![Status](https://img.shields.io/badge/Status-Active-blue.svg)
+![Website](https://img.shields.io/badge/Website-Live-222222?logo=vercel)
 
-Tatawwu’ brings charitable, volunteer, and humanitarian campaigns in Bahrain into one place. Volunteers can discover activities, save favorites, share campaign links, and track participation. Organizers can publish activities and certificates for the participants after admin review the campaigns.
+![Tatawwu wordmark: volunteering in Bahrain](src/assets/tatawwu-logo.svg)
+
+Tatawwu' brings charitable, volunteer, and humanitarian campaigns in Bahrain into one place. Volunteers can discover activities, save favorites, share campaign links, and track participation. Organizers can publish activities and certificates for the participants after admin review the campaigns.
+
+**Live website:** [tatawuu-frontend.vercel.app](https://tatawuu-frontend.vercel.app/)
+**Live backend:** [tatawwubackend.onrender.com](https://tatawwubackend.onrender.com)
 
 **Repositories:** [Frontend — React](https://github.com/ctarek2015-wq/tatawuu-frontend) · [Backend — Express and MongoDB](https://github.com/EshaAbbasi/TatawwuBackend)
 
@@ -14,10 +20,20 @@ Tatawwu’ brings charitable, volunteer, and humanitarian campaigns in Bahrain i
 
 ### Getting started
 
+- **Live demo (frontend):** [https://tatawuu-frontend.vercel.app/](https://tatawuu-frontend.vercel.app/)
+- **Live backend:** [https://tatawwubackend.onrender.com](https://tatawwubackend.onrender.com)
 - **Deployment:** configure the environments below, then deploy the frontend and backend separately.
 - **Planning:** [team Trello board](https://trello.com/b/SZ3tg7mp/tatawuu).
 - **Frontend repository:** [ctarek2015-wq/tatawuu-frontend](https://github.com/ctarek2015-wq/tatawuu-frontend).
 - **Backend repository:** [EshaAbbasi/TatawwuBackend](https://github.com/EshaAbbasi/TatawwuBackend).
+
+#
+
+## Team
+
+- Esha Ashfar
+- Ahmed Tarek
+- Hassan Mohammad Saeed
 
 #
 
@@ -33,8 +49,8 @@ Tatawwu’ brings charitable, volunteer, and humanitarian campaigns in Bahrain i
 | U04 | As a visitor, I want to create a volunteer or organizer account so that I can use the platform.                                                  |
 | U05 | As a user, I want to sign in and sign out so that I can securely access my account.                                                              |
 | U06 | As a user, I want to edit my name and optional city so that my profile stays accurate.                                                           |
-| U07 | As a visitor, I want to copy a public campaign’s link so that I can share the opportunity with others.                                           |
-| U08 | As a visitor, I want to open an organization’s public email, phone, or WhatsApp contact link so that I can ask about a campaign.                 |
+| U07 | As a visitor, I want to copy a public campaign's link so that I can share the opportunity with others.                                           |
+| U08 | As a visitor, I want to open an organization's public email, phone, or WhatsApp contact link so that I can ask about a campaign.                 |
 
 ### Volunteers
 
@@ -52,7 +68,7 @@ Tatawwu’ brings charitable, volunteer, and humanitarian campaigns in Bahrain i
 | ID  | User story                                                                                                                                    |
 | --- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | O01 | As an organizer, I want to create and edit my Bahrain organization profile so that I can submit it for approval.                              |
-| O02 | As an organizer, I want to upload, replace, or remove my organization’s logo so that volunteers can recognize it.                             |
+| O02 | As an organizer, I want to upload, replace, or remove my organization's logo so that volunteers can recognize it.                             |
 | O03 | As an organizer, I want to create and view campaign drafts so that I can prepare activities in Bahrain.                                       |
 | O04 | As an organizer, I want to edit campaign information and its cover image before the activity starts so that the listing stays accurate.       |
 | O05 | As an organizer, I want to delete unused unpublished campaigns so that I can remove unnecessary drafts.                                       |
@@ -60,25 +76,25 @@ Tatawwu’ brings charitable, volunteer, and humanitarian campaigns in Bahrain i
 | O07 | As an organizer, I want to cancel a published campaign so that participants can see that it will not take place.                              |
 | O08 | As an organizer, I want to view participants and record attendance after an activity so that participation is documented.                     |
 | O09 | As an organizer, I want to complete a campaign after recording attendance so that attendees become eligible for certificates.                 |
-| O10 | As an organizer, I want to grant certificates to eligible attendees so that their user IDs are recorded in the campaign’s certificate grants. |
+| O10 | As an organizer, I want to grant certificates to eligible attendees so that their user IDs are recorded in the campaign's certificate grants. |
 
 ### Admins
 
 | ID  | User story                                                                                                                       |
 | --- | -------------------------------------------------------------------------------------------------------------------------------- |
 | A01 | As an admin, I want to review organization information, location, and logo so that I can approve Bahrain-based organizations.    |
-| A02 | As an admin, I want to review each campaign’s details, location, and image so that I can approve suitable activities in Bahrain. |
+| A02 | As an admin, I want to review each campaign's details, location, and image so that I can approve suitable activities in Bahrain. |
 | A03 | As an admin, I want to reject or remove inappropriate content with feedback so that organizers understand my decision.           |
 
 ## 2. Entity relationship diagrams (ERDs)
 
 The application uses **three MongoDB models**. Participants are embedded in Campaign, following the embedded-comments approach in the Hoots example. There is no Registration model, controller, or collection used by this version.
 
-| Model | Main fields and relationships |
-| --- | --- |
-| User | `username`, hashed `password`, `name`, optional `city`, and `role` (`Volunteer`, `Organizer`, `Admin`). |
-| Organization | One `ownerId` referencing User; name, description, Bahrain location, public contacts, `logo`, `logoPublicId`, optional `latitude`/`longitude`, status, and review feedback. |
-| Campaign | `organizationId`, title, description, category, Bahrain location, venue, `startsAt`, `endsAt`, capacity, optional `latitude`/`longitude`, cover image/public ID, status, `wasPublished`, participants, favorites, and certificate grants. |
+| Model        | Main fields and relationships                                                                                                                                                                                                             |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| User         | `username`, hashed `password`, `name`, optional `city`, and `role` (`Volunteer`, `Organizer`, `Admin`).                                                                                                                                   |
+| Organization | One `ownerId` referencing User; name, description, Bahrain location, public contacts, `logo`, `logoPublicId`, optional `latitude`/`longitude`, status, and review feedback.                                                               |
+| Campaign     | `organizationId`, title, description, category, Bahrain location, venue, `startsAt`, `endsAt`, capacity, optional `latitude`/`longitude`, cover image/public ID, status, `wasPublished`, participants, favorites, and certificate grants. |
 
 Usernames are unique within each role. The same username can have separate Admin, Organizer, and Volunteer accounts. Sign-in selects the matching username and role, then checks that account's password.
 
@@ -100,13 +116,13 @@ Country is `BH`. Governorates are Capital, Northern, Southern, and Muharraq; Rif
 
 ## 3. Application pages
 
-| Audience | Routes |
-| --- | --- |
-| Public | `/`, `/campaigns`, `/campaigns/:id`, `/organizations`, `/organizations/:id`, `/organizations/:orgId/campaigns`, `/sign-up`, `/sign-in` |
-| Signed-in accounts | `/profile` |
-| Volunteers | `/my/registrations`, `/my/favorites`, `/my/certificates` |
-| Organizers | `/organizer`, `/organizer/organization`, `/organizer/campaigns`, `/organizer/campaigns/new`, `/organizer/campaigns/:id/edit`, `/organizer/campaigns/:id/participants` |
-| Admins | `/admin` |
+| Audience           | Routes                                                                                                                                                                |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Public             | `/`, `/campaigns`, `/campaigns/:id`, `/organizations`, `/organizations/:id`, `/organizations/:orgId/campaigns`, `/sign-up`, `/sign-in`                                |
+| Signed-in accounts | `/profile`                                                                                                                                                            |
+| Volunteers         | `/my/registrations`, `/my/favorites`, `/my/certificates`                                                                                                              |
+| Organizers         | `/organizer`, `/organizer/organization`, `/organizer/campaigns`, `/organizer/campaigns/new`, `/organizer/campaigns/:id/edit`, `/organizer/campaigns/:id/participants` |
+| Admins             | `/admin`                                                                                                                                                              |
 
 Discovery uses simple React state and array filtering for activity/organization search, governorate, area, category, and an inclusive activity-start date range. Results show six campaigns per page. Search and Clear filters remain visible; Show filters / Hide filters toggles governorate, area, category, and date inputs without clearing selections. Changing or clearing filters resets pagination. The website uses plain forms with styling limited to certificates, maps, and language direction.
 
@@ -116,42 +132,42 @@ All paths below are relative to the backend URL. Protected requests use the exis
 
 ### Accounts and organizations
 
-| Method | Path | Purpose |
-| --- | --- | --- |
-| POST | `/auth/sign-up` | Create a Volunteer or Organizer account; return user and token. |
-| POST | `/auth/sign-in` | Sign in with username, password, and selected role; return user and token. |
-| GET / PUT | `/auth/me` | Read the current account or update name/city. |
-| GET | `/organizations` | List approved organizations. |
-| GET | `/organizations/mine` | Read the organizer's organization, or `null` before setup. |
-| GET | `/organizations/review` | Admin organization review list. |
-| GET | `/organizations/:id` | Read an approved organization. |
-| POST | `/organizations` | Create an organization. |
-| PUT | `/organizations/:id` | Save organization changes and return to Pending. |
-| PUT | `/organizations/:id/review` | Admin decision with `status` and `reviewReason`. |
-| DELETE | `/organizations/:id` | Delete the owned organization only when it has no campaigns. |
+| Method    | Path                        | Purpose                                                                    |
+| --------- | --------------------------- | -------------------------------------------------------------------------- |
+| POST      | `/auth/sign-up`             | Create a Volunteer or Organizer account; return user and token.            |
+| POST      | `/auth/sign-in`             | Sign in with username, password, and selected role; return user and token. |
+| GET / PUT | `/auth/me`                  | Read the current account or update name/city.                              |
+| GET       | `/organizations`            | List approved organizations.                                               |
+| GET       | `/organizations/mine`       | Read the organizer's organization, or `null` before setup.                 |
+| GET       | `/organizations/review`     | Admin organization review list.                                            |
+| GET       | `/organizations/:id`        | Read an approved organization.                                             |
+| POST      | `/organizations`            | Create an organization.                                                    |
+| PUT       | `/organizations/:id`        | Save organization changes and return to Pending.                           |
+| PUT       | `/organizations/:id/review` | Admin decision with `status` and `reviewReason`.                           |
+| DELETE    | `/organizations/:id`        | Delete the owned organization only when it has no campaigns.               |
 
 ### Campaigns
 
-| Method | Path | Purpose |
-| --- | --- | --- |
-| GET / POST | `/campaigns` | Public approved list / create an organizer draft. |
-| GET | `/campaigns/mine`, `/campaigns/mine/:id` | Organizer list and private campaign detail. |
-| GET | `/campaigns/review`, `/campaigns/review/:id` | Admin list and private campaign detail. |
-| GET | `/campaigns/activities` | Current volunteer's participation history. |
-| GET | `/campaigns/favorites` | Current volunteer's favorites; hidden campaigns return an unavailable entry. |
-| GET | `/campaigns/certificates` | Current volunteer's granted certificates. |
-| GET / PUT / DELETE | `/campaigns/:id` | Public detail / owner edit / delete an unused unpublished campaign. |
-| POST | `/campaigns/:id/submit` | Submit a draft or rejected campaign for review. |
-| POST | `/campaigns/:id/cancel` | Cancel a published campaign. |
-| POST | `/campaigns/:id/complete` | Complete an ended campaign with attendance recorded. |
-| PUT | `/campaigns/:id/review` | Admin decision with `status` and `reviewReason`. |
-| GET / POST | `/campaigns/:id/participants` | Organizer participants / volunteer joining. |
-| DELETE | `/campaigns/:id/participants/me` | Cancel the current volunteer's registration. |
-| PUT | `/campaigns/:id/participants/:volunteerId` | Update `attendance`. |
-| PUT / DELETE | `/campaigns/:id/favorite` | Save / remove a favorite. |
-| PUT / DELETE | `/campaigns/:id/certificates/:volunteerId` | Grant / remove a certificate. |
-| GET | `/campaigns/:id/certificate` | Generate the current volunteer's granted PDF certificate. |
-| POST | `/uploads` | Organizer image upload as multipart field `image`; returns `{ url, publicId }`. |
+| Method             | Path                                         | Purpose                                                                         |
+| ------------------ | -------------------------------------------- | ------------------------------------------------------------------------------- |
+| GET / POST         | `/campaigns`                                 | Public approved list / create an organizer draft.                               |
+| GET                | `/campaigns/mine`, `/campaigns/mine/:id`     | Organizer list and private campaign detail.                                     |
+| GET                | `/campaigns/review`, `/campaigns/review/:id` | Admin list and private campaign detail.                                         |
+| GET                | `/campaigns/activities`                      | Current volunteer's participation history.                                      |
+| GET                | `/campaigns/favorites`                       | Current volunteer's favorites; hidden campaigns return an unavailable entry.    |
+| GET                | `/campaigns/certificates`                    | Current volunteer's granted certificates.                                       |
+| GET / PUT / DELETE | `/campaigns/:id`                             | Public detail / owner edit / delete an unused unpublished campaign.             |
+| POST               | `/campaigns/:id/submit`                      | Submit a draft or rejected campaign for review.                                 |
+| POST               | `/campaigns/:id/cancel`                      | Cancel a published campaign.                                                    |
+| POST               | `/campaigns/:id/complete`                    | Complete an ended campaign with attendance recorded.                            |
+| PUT                | `/campaigns/:id/review`                      | Admin decision with `status` and `reviewReason`.                                |
+| GET / POST         | `/campaigns/:id/participants`                | Organizer participants / volunteer joining.                                     |
+| DELETE             | `/campaigns/:id/participants/me`             | Cancel the current volunteer's registration.                                    |
+| PUT                | `/campaigns/:id/participants/:volunteerId`   | Update `attendance`.                                                            |
+| PUT / DELETE       | `/campaigns/:id/favorite`                    | Save / remove a favorite.                                                       |
+| PUT / DELETE       | `/campaigns/:id/certificates/:volunteerId`   | Grant / remove a certificate.                                                   |
+| GET                | `/campaigns/:id/certificate`                 | Generate the current volunteer's granted PDF certificate.                       |
+| POST               | `/uploads`                                   | Organizer image upload as multipart field `image`; returns `{ url, publicId }`. |
 
 ## 5. Component hierarchy
 
@@ -182,6 +198,8 @@ The User model defines a unique compound index on `username` and `role`. Fresh d
 2. Create `.env` using `.env.example`. Set `VITE_BACK_END_SERVER_URL` to the backend origin without a trailing slash, for example `http://localhost:3000`.
 3. Use `npm run dev` for local development.
 4. For deployment, set `VITE_BACK_END_SERVER_URL` to the deployed HTTPS backend URL before the frontend build. Use `npm run build`, with `dist` as the output directory. The existing `vercel.json` rewrite supports direct links to React pages.
+
+**Live deployment:** the frontend is deployed on Vercel at [https://tatawuu-frontend.vercel.app/](https://tatawuu-frontend.vercel.app/), and the backend is deployed on Render at [https://tatawwubackend.onrender.com](https://tatawwubackend.onrender.com).
 
 ### Images and certificates
 
@@ -238,6 +256,19 @@ Live Cloudinary upload success was not verified because credentials are not conf
 - Volunteer badges and leaderboard.
 - Tracked volunteer hours and automatic certificates.
 - Admin user-management pages.
+
+## Acknowledgments and Attributions
+
+This project uses the following third-party services, packages, and media:
+
+- **Hosting/Deployment:** frontend deployed on [Vercel](https://vercel.com/) — [https://tatawuu-frontend.vercel.app/](https://tatawuu-frontend.vercel.app/).
+- **Image storage:** [Cloudinary](https://cloudinary.com/) for uploading, storing, and delivering organization logos and campaign cover images. See [Cloudinary Node uploads documentation](https://cloudinary.com/documentation/node_image_and_video_upload).
+- **Campaign images:** sample/demo campaign images were sourced from Google Images for placeholder and demonstration purposes only; these are used solely for educational, non-commercial project demonstration.
+- **Maps:** [Leaflet](https://leafletjs.com/) with [OpenStreetMap](https://www.openstreetmap.org/copyright) tiles for the map picker and saved-location display, per the [OpenStreetMap tile usage policy](https://operations.osmfoundation.org/policies/tiles/).
+- **PDF generation:** [PDFKit](https://pdfkit.org/) for generating downloadable certificate PDFs.
+- **Translation / language switching:** [react-i18next](https://react.i18next.com/) is used to power the English/Arabic language toggle and RTL layout switching across the app.
+- **Demo/walkthrough video:** [Watch the project demo on YouTube](https://youtu.be/KCPvImAdC5o?si=pIpgsmEjyxqA5-aN).
+- **Bahrain coat of arms artwork:** sourced from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Coat_of_Arms_of_The_Kingdom_of_Bahrain.svg), bundled with the backend under its source license.
 
 ### Technical references
 
