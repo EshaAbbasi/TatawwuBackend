@@ -1,4 +1,4 @@
-# Tatawwu’ — Volunteering in Bahrain
+# Tatawwu' — Volunteering in Bahrain
 
 ![Tatawwu wordmark: volunteering in Bahrain](assets/tatawwu-logo.svg)
 
@@ -34,8 +34,8 @@ Tatawwu’ brings charitable, volunteer, and humanitarian campaigns in Bahrain i
 | U04 | As a visitor, I want to create a volunteer or organizer account so that I can use the platform.                                                  |
 | U05 | As a user, I want to sign in and sign out so that I can securely access my account.                                                              |
 | U06 | As a user, I want to edit my name and optional city so that my profile stays accurate.                                                           |
-| U07 | As a visitor, I want to copy a public campaign’s link so that I can share the opportunity with others.                                           |
-| U08 | As a visitor, I want to open an organization’s public email, phone, or WhatsApp contact link so that I can ask about a campaign.                 |
+| U07 | As a visitor, I want to copy a public campaign's link so that I can share the opportunity with others.                                           |
+| U08 | As a visitor, I want to open an organization's public email, phone, or WhatsApp contact link so that I can ask about a campaign.                 |
 
 ### Volunteers
 
@@ -53,7 +53,7 @@ Tatawwu’ brings charitable, volunteer, and humanitarian campaigns in Bahrain i
 | ID  | User story                                                                                                                                    |
 | --- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | O01 | As an organizer, I want to create and edit my Bahrain organization profile so that I can submit it for approval.                              |
-| O02 | As an organizer, I want to upload, replace, or remove my organization’s logo so that volunteers can recognize it.                             |
+| O02 | As an organizer, I want to upload, replace, or remove my organization's logo so that volunteers can recognize it.                             |
 | O03 | As an organizer, I want to create and view campaign drafts so that I can prepare activities in Bahrain.                                       |
 | O04 | As an organizer, I want to edit campaign information and its cover image before the activity starts so that the listing stays accurate.       |
 | O05 | As an organizer, I want to delete unused unpublished campaigns so that I can remove unnecessary drafts.                                       |
@@ -61,14 +61,14 @@ Tatawwu’ brings charitable, volunteer, and humanitarian campaigns in Bahrain i
 | O07 | As an organizer, I want to cancel a published campaign so that participants can see that it will not take place.                              |
 | O08 | As an organizer, I want to view participants and record attendance after an activity so that participation is documented.                     |
 | O09 | As an organizer, I want to complete a campaign after recording attendance so that attendees become eligible for certificates.                 |
-| O10 | As an organizer, I want to grant certificates to eligible attendees so that their user IDs are recorded in the campaign’s certificate grants. |
+| O10 | As an organizer, I want to grant certificates to eligible attendees so that their user IDs are recorded in the campaign's certificate grants. |
 
 ### Admins
 
 | ID  | User story                                                                                                                       |
 | --- | -------------------------------------------------------------------------------------------------------------------------------- |
 | A01 | As an admin, I want to review organization information, location, and logo so that I can approve Bahrain-based organizations.    |
-| A02 | As an admin, I want to review each campaign’s details, location, and image so that I can approve suitable activities in Bahrain. |
+| A02 | As an admin, I want to review each campaign's details, location, and image so that I can approve suitable activities in Bahrain. |
 | A03 | As an admin, I want to reject or remove inappropriate content with feedback so that organizers understand my decision.           |
 
 ## 2. Entity relationship diagrams (ERDs)
@@ -201,6 +201,19 @@ JavaScript, React, React Router, Vite, CSS Flexbox/Grid, Node.js, Express, Mongo
 
 - Volunteer badges and leaderboard.
 - Tracked volunteer hours and automatic certificates.
+
+## Acknowledgments and Attributions
+
+This project uses the following third-party services, packages, and media:
+
+- **Hosting/Deployment:** frontend deployed on [Vercel](https://vercel.com/) — [https://tatawuu-frontend.vercel.app/](https://tatawuu-frontend.vercel.app/).
+- **Image storage:** [Cloudinary](https://cloudinary.com/) for uploading, storing, and delivering organization logos and campaign cover images. See [Cloudinary Node uploads documentation](https://cloudinary.com/documentation/node_image_and_video_upload).
+- **Campaign images:** sample/demo campaign images were sourced from Google Images for placeholder and demonstration purposes only; these are used solely for educational, non-commercial project demonstration.
+- **Maps:** [Leaflet](https://leafletjs.com/) with [OpenStreetMap](https://www.openstreetmap.org/copyright) tiles for the map picker and saved-location display, per the [OpenStreetMap tile usage policy](https://operations.osmfoundation.org/policies/tiles/).
+- **PDF generation:** [PDFKit](https://pdfkit.org/) for generating downloadable certificate PDFs.
+- **Translation / language switching:** [react-i18next](https://react.i18next.com/) is used to power the English/Arabic language toggle and RTL layout switching across the app.
+- **Demo/walkthrough video:** [Watch the project demo on YouTube](https://youtu.be/KCPvImAdC5o?si=pIpgsmEjyxqA5-aN).
+- **Bahrain coat of arms artwork:** sourced from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Coat_of_Arms_of_The_Kingdom_of_Bahrain.svg), bundled with the backend under its source license.
 
 ### Technical references
 
