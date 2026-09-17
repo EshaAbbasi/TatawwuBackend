@@ -1,7 +1,7 @@
 # Tatawwu' — Volunteering in Bahrain
 
 ![Status](https://img.shields.io/badge/Status-Active-blue.svg)
-![Website](https://img.shields.io/badge/Website-Live-222222?logo=vercel)
+![Website](https://img.shields.io/badge/https://tatawuu-frontend.vercel.app/)
 
 ![Tatawwu wordmark: volunteering in Bahrain](src/assets/tatawwu-logo.svg)
 
