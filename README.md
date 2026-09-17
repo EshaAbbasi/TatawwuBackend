@@ -2,7 +2,7 @@
 
 ![Tatawwu wordmark: volunteering in Bahrain](assets/tatawwu-logo.svg)
 
-Tatawwu’ brings charitable, volunteer, and humanitarian campaigns in Bahrain into one place. Volunteers can discover activities, save favorites, share campaign links, and track participation. Organizers can publish activities and certificates for the participants after admin review the campaigns.
+Tatawwu’ brings charitable, volunteer, and humanitarian campaigns in Bahrain into one place. Volunteers can discover activities, save favorites, share campaign links, and track participation. Organizers manage reviewed campaigns, publish updates, record attendance, and grant downloadable certificates.
 
 **Repositories:** [Frontend — React](https://github.com/ctarek2015-wq/tatawuu-frontend) · [Backend — Express and MongoDB](https://github.com/EshaAbbasi/TatawwuBackend)
 
@@ -14,12 +14,13 @@ Tatawwu’ brings charitable, volunteer, and humanitarian campaigns in Bahrain i
 
 ### Getting started
 
+- **Live website:** [Tatawwu](https://tatawuu-frontend.vercel.app/).
+- **Live backend:** [API](https://tatawwubackend.onrender.com).
+
 - **Deployment:** configure the environments below, then deploy the frontend and backend separately.
 - **Planning:** [team Trello board](https://trello.com/b/SZ3tg7mp/tatawuu).
 - **Frontend repository:** [ctarek2015-wq/tatawuu-frontend](https://github.com/ctarek2015-wq/tatawuu-frontend).
 - **Backend repository:** [EshaAbbasi/TatawwuBackend](https://github.com/EshaAbbasi/TatawwuBackend).
-
-#
 
 ## 1. AAU user stories
 
@@ -72,13 +73,19 @@ Tatawwu’ brings charitable, volunteer, and humanitarian campaigns in Bahrain i
 
 ## 2. Entity relationship diagrams (ERDs)
 
-The application uses **three MongoDB models**. Participants are embedded in Campaign, following the embedded-comments approach in the Hoots example. There is no Registration model, controller, or collection used by this version.
+![Current collection relationships](assets/ERD/01-erd-collections.svg)
 
-| Model | Main fields and relationships |
-| --- | --- |
-| User | `username`, hashed `password`, `name`, optional `city`, and `role` (`Volunteer`, `Organizer`, `Admin`). |
-| Organization | One `ownerId` referencing User; name, description, Bahrain location, public contacts, `logo`, `logoPublicId`, optional `latitude`/`longitude`, status, and review feedback. |
-| Campaign | `organizationId`, title, description, category, Bahrain location, venue, `startsAt`, `endsAt`, capacity, optional `latitude`/`longitude`, cover image/public ID, status, `wasPublished`, participants, favorites, and certificate grants. |
+[Embedded participation and locations](assets/ERD/02-erd-embedded-schemas.svg) · [Participation and update routes](assets/routes/06-participation-updates.svg)
+
+The application uses **four MongoDB models: User, Organization, Campaign, and CampaignUpdate**. Participants are embedded in Campaign, following the embedded-comments approach in the Hoots example. Organization, Campaign, and CampaignUpdate are three entities in addition to User. There is no separate Registration model or API.
+
+| Model        | Main fields and relationships                                                                                                                                                                                                             |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| User         | `username`, hashed `password`, `name`, optional `city`, and `role` (`Volunteer`, `Organizer`, `Admin`).                                                                                                                                   |
+| Organization | One `ownerId` referencing User; name, description, Bahrain location, public contacts, `logo`, `logoPublicId`, optional `latitude`/`longitude`, status, and review feedback.                                                               |
+| Campaign     | `organizationId`, title, description, category, Bahrain location, venue, `startsAt`, `endsAt`, capacity, optional `latitude`/`longitude`, cover image/public ID, status, `wasPublished`, participants, favorites, and certificate grants. |
+
+| CampaignUpdate | `campaignId` referencing Campaign, `authorId` referencing User, nonempty `text`, `createdAt`, and `updatedAt`. |
 
 Usernames are unique within each role. The same username can have separate Admin, Organizer, and Volunteer accounts. Sign-in selects the matching username and role, then checks that account's password.
 
@@ -100,15 +107,15 @@ Country is `BH`. Governorates are Capital, Northern, Southern, and Muharraq; Rif
 
 ## 3. Application pages
 
-| Audience | Routes |
-| --- | --- |
-| Public | `/`, `/campaigns`, `/campaigns/:id`, `/organizations`, `/organizations/:id`, `/organizations/:orgId/campaigns`, `/sign-up`, `/sign-in` |
-| Signed-in accounts | `/profile` |
-| Volunteers | `/my/registrations`, `/my/favorites`, `/my/certificates` |
-| Organizers | `/organizer`, `/organizer/organization`, `/organizer/campaigns`, `/organizer/campaigns/new`, `/organizer/campaigns/:id/edit`, `/organizer/campaigns/:id/participants` |
-| Admins | `/admin` |
+| Audience           | Routes                                                                                                                                                                                                    |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Public             | `/`, `/activities`, `/campaigns`, `/campaigns/:id`, `/organizations`, `/organizations/:id`, `/organizations/:orgId/campaigns`, `/sign-up`, `/sign-in`                                                     |
+| Signed-in accounts | `/profile`                                                                                                                                                                                                |
+| Volunteers         | `/my/registrations`, `/my/favorites`, `/my/certificates`                                                                                                                                                  |
+| Organizers         | `/organizer`, `/organizer/organization`, `/organizer/campaigns`, `/organizer/campaigns/new`, `/organizer/campaigns/:id/edit`, `/organizer/campaigns/:id/participants`, `/organizer/campaigns/:id/updates` |
+| Admins             | `/admin`                                                                                                                                                                                                  |
 
-Discovery uses simple React state and array filtering for activity/organization search, governorate, area, category, and an inclusive activity-start date range. Results show six campaigns per page. Search and Clear filters remain visible; Show filters / Hide filters toggles governorate, area, category, and date inputs without clearing selections. Changing or clearing filters resets pagination. The website uses plain forms with styling limited to certificates, maps, and language direction.
+Discovery uses simple React state and array filtering for activity/organization search, governorate, area, category, and an inclusive activity-start date range. Results show six campaigns per page. Search and Clear filters remain visible; Show filters / Hide filters toggles governorate, area, category, and date inputs without clearing selections. Changing or clearing filters resets pagination. The interface uses the burgundy/beige theme, responsive Flexbox/Grid layouts, styled forms, and English/Arabic navigation. The homepage remains `/`; `/activities` and `/campaigns` open discovery.
 
 ## 4. Routes
 
@@ -116,128 +123,84 @@ All paths below are relative to the backend URL. Protected requests use the exis
 
 ### Accounts and organizations
 
-| Method | Path | Purpose |
-| --- | --- | --- |
-| POST | `/auth/sign-up` | Create a Volunteer or Organizer account; return user and token. |
-| POST | `/auth/sign-in` | Sign in with username, password, and selected role; return user and token. |
-| GET / PUT | `/auth/me` | Read the current account or update name/city. |
-| GET | `/organizations` | List approved organizations. |
-| GET | `/organizations/mine` | Read the organizer's organization, or `null` before setup. |
-| GET | `/organizations/review` | Admin organization review list. |
-| GET | `/organizations/:id` | Read an approved organization. |
-| POST | `/organizations` | Create an organization. |
-| PUT | `/organizations/:id` | Save organization changes and return to Pending. |
-| PUT | `/organizations/:id/review` | Admin decision with `status` and `reviewReason`. |
-| DELETE | `/organizations/:id` | Delete the owned organization only when it has no campaigns. |
+| Method    | Path                        | Purpose                                                                    |
+| --------- | --------------------------- | -------------------------------------------------------------------------- |
+| POST      | `/auth/sign-up`             | Create a Volunteer or Organizer account; return user and token.            |
+| POST      | `/auth/sign-in`             | Sign in with username, password, and selected role; return user and token. |
+| GET / PUT | `/auth/me`                  | Read the current account or update name/city.                              |
+| GET       | `/organizations`            | List approved organizations.                                               |
+| GET       | `/organizations/mine`       | Read the organizer's organization, or `null` before setup.                 |
+| GET       | `/organizations/review`     | Admin organization review list.                                            |
+| GET       | `/organizations/:id`        | Read an approved organization.                                             |
+| POST      | `/organizations`            | Create an organization.                                                    |
+| PUT       | `/organizations/:id`        | Save organization changes and return to Pending.                           |
+| PUT       | `/organizations/:id/review` | Admin decision with `status` and `reviewReason`.                           |
+| DELETE    | `/organizations/:id`        | Delete the owned organization only when it has no campaigns.               |
 
 ### Campaigns
 
-| Method | Path | Purpose |
-| --- | --- | --- |
-| GET / POST | `/campaigns` | Public approved list / create an organizer draft. |
-| GET | `/campaigns/mine`, `/campaigns/mine/:id` | Organizer list and private campaign detail. |
-| GET | `/campaigns/review`, `/campaigns/review/:id` | Admin list and private campaign detail. |
-| GET | `/campaigns/activities` | Current volunteer's participation history. |
-| GET | `/campaigns/favorites` | Current volunteer's favorites; hidden campaigns return an unavailable entry. |
-| GET | `/campaigns/certificates` | Current volunteer's granted certificates. |
-| GET / PUT / DELETE | `/campaigns/:id` | Public detail / owner edit / delete an unused unpublished campaign. |
-| POST | `/campaigns/:id/submit` | Submit a draft or rejected campaign for review. |
-| POST | `/campaigns/:id/cancel` | Cancel a published campaign. |
-| POST | `/campaigns/:id/complete` | Complete an ended campaign with attendance recorded. |
-| PUT | `/campaigns/:id/review` | Admin decision with `status` and `reviewReason`. |
-| GET / POST | `/campaigns/:id/participants` | Organizer participants / volunteer joining. |
-| DELETE | `/campaigns/:id/participants/me` | Cancel the current volunteer's registration. |
-| PUT | `/campaigns/:id/participants/:volunteerId` | Update `attendance`. |
-| PUT / DELETE | `/campaigns/:id/favorite` | Save / remove a favorite. |
-| PUT / DELETE | `/campaigns/:id/certificates/:volunteerId` | Grant / remove a certificate. |
-| GET | `/campaigns/:id/certificate` | Generate the current volunteer's granted PDF certificate. |
-| POST | `/uploads` | Organizer image upload as multipart field `image`; returns `{ url, publicId }`. |
+| Method             | Path                                         | Purpose                                                                         |
+| ------------------ | -------------------------------------------- | ------------------------------------------------------------------------------- |
+| GET / POST         | `/campaigns`                                 | Public approved list / create an organizer draft.                               |
+| GET                | `/campaigns/mine`, `/campaigns/mine/:id`     | Organizer list and private campaign detail.                                     |
+| GET                | `/campaigns/review`, `/campaigns/review/:id` | Admin list and private campaign detail.                                         |
+| GET                | `/campaigns/activities`                      | Current volunteer's participation history.                                      |
+| GET                | `/campaigns/favorites`                       | Current volunteer's favorites; hidden campaigns return an unavailable entry.    |
+| GET                | `/campaigns/certificates`                    | Current volunteer's granted certificates.                                       |
+| GET / PUT / DELETE | `/campaigns/:id`                             | Public detail / owner edit / delete an unused unpublished campaign.             |
+| POST               | `/campaigns/:id/submit`                      | Submit a draft or rejected campaign for review.                                 |
+| POST               | `/campaigns/:id/cancel`                      | Cancel a published campaign.                                                    |
+| POST               | `/campaigns/:id/complete`                    | Complete an ended campaign with attendance recorded.                            |
+| PUT                | `/campaigns/:id/review`                      | Admin decision with `status` and `reviewReason`.                                |
+| GET / POST         | `/campaigns/:id/participants`                | Organizer participants / volunteer joining.                                     |
+| DELETE             | `/campaigns/:id/participants/me`             | Cancel the current volunteer's registration.                                    |
+| PUT                | `/campaigns/:id/participants/:volunteerId`   | Update `attendance`.                                                            |
+| PUT / DELETE       | `/campaigns/:id/favorite`                    | Save / remove a favorite.                                                       |
+| PUT / DELETE       | `/campaigns/:id/certificates/:volunteerId`   | Grant / remove a certificate.                                                   |
+| GET                | `/campaigns/:id/certificate`                 | Generate the current volunteer's granted PDF certificate.                       |
+| POST               | `/uploads`                                   | Organizer image upload as multipart field `image`; returns `{ url, publicId }`. |
+
+### Campaign updates
+
+| Method | Path                               | Purpose                                                                      |
+| ------ | ---------------------------------- | ---------------------------------------------------------------------------- |
+| GET    | `/campaigns/:id/updates`           | Public newest-first updates when campaign and organization are Approved.     |
+| GET    | `/campaigns/mine/:id/updates`      | Owning organizer's updates in every campaign status.                         |
+| POST   | `/campaigns/:id/updates`           | Owner creates an update with `{ text }`; ownership IDs come from the server. |
+| PUT    | `/campaigns/:id/updates/:updateId` | Owning author edits an update's text.                                        |
+| DELETE | `/campaigns/:id/updates/:updateId` | Owning author removes an update.                                             |
+
+Updates do not trigger campaign resubmission. Deleting an eligible unpublished campaign also deletes its updates. Campaign management links to a form with prefilled editing and deletion; public detail pages display updates under the activity. No database reset or migration is required.
 
 ## 5. Component hierarchy
 
 `App` provides routes under `UserContext` and `LanguageContext`, with the shared `NavBar`. Each page loads its own data through named service functions.
 
-- Discovery: `ExplorePage` → `CampaignGrid` → `CampaignCard`.
+- Landing: `ExplorePage` loads public campaigns and organizations for accurate counts. Discovery: `CampaignsPage` → `CampaignGrid` → `CampaignCard`.
 - Public details: `CampaignDetail` and `OrganizationDetail` use `OrganizationContacts`.
-- Organizer: `OrganizationProfile` → `OrganizationForm` / `OrganizationView`; `CampaignManager`, `CampaignForm`, and `CampaignParticipants` handle campaign work.
+- Organizer: `OrganizationProfile` → `OrganizationForm` / `OrganizationView`; `CampaignManager`, `CampaignForm`, `CampaignParticipants`, and `CampaignUpdates` handle campaign work. Organization owners can delete their organization only when it has no campaigns.
 - Volunteer: `VolunteerDashboard`, `Favorites`, and `Certificates` show personal records.
 - Admin: `AdminDashboard` switches between `OrganizationReview` and `CampaignReview`.
 - Shared: `ImagePicker` previews images; `MapPicker` selects optional coordinates; `LocationMap` shows saved locations and directions. Date utilities handle Bahrain input/display conversion.
 
-## Local setup and deployment
+### Technologies used
 
-### Backend
+JavaScript, React, React Router, Vite, CSS Flexbox/Grid, Node.js, Express, MongoDB, Mongoose, JWT, bcrypt, Cloudinary, Multer, PDFKit, and Leaflet/OpenStreetMap.
 
-1. In `TatawwuBackend`, install dependencies with `npm install`.
-2. Create `.env` using `.env.example` and set `MONGODB_URI`, `JWT_SECRET`, `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, and `CLOUDINARY_API_SECRET`.
-3. Use `npm run dev` locally, or `npm start` on the deployment host. The server listens on `PORT`, defaulting to `3000`.
+### Attributions
 
-This version targets fresh development data. It does not migrate, reset, or delete an existing database. Signup creates Volunteer or Organizer accounts. To provision an admin, create an account and set its `role` to `Admin` in your own MongoDB administration tool, then sign in again with Admin selected. To use Volunteer with the same username as well, create a separate Volunteer account; changing a role does not create another account.
-
-The User model defines a unique compound index on `username` and `role`. Fresh databases need no index changes. For an existing database, confirm the `username_1_role_1` index exists, then remove only the old unique `username_1` index, if present: `db.users.dropIndex("username_1")`. This permits the same username across roles without removing account records.
-
-### Frontend
-
-1. In `tatawuu-frontend`, install dependencies with `npm install`.
-2. Create `.env` using `.env.example`. Set `VITE_BACK_END_SERVER_URL` to the backend origin without a trailing slash, for example `http://localhost:3000`.
-3. Use `npm run dev` for local development.
-4. For deployment, set `VITE_BACK_END_SERVER_URL` to the deployed HTTPS backend URL before the frontend build. Use `npm run build`, with `dist` as the output directory. The existing `vercel.json` rewrite supports direct links to React pages.
-
-### Images and certificates
-
-Cloudinary credentials belong in the backend environment. Images pass through Multer memory storage to Cloudinary; no server uploads folder is used. The database stores the HTTPS URL and public ID. Replacing/removing an image updates the record before deleting the old Cloudinary asset. A failed upload or save leaves the previously saved image intact.
-
-PDFKit streams an A4 landscape certificate directly to the HTTP response. The template has a white background, Bahrain-red border and flag accents, and the official Bahrain coat of arms. Certificate labels remain English in both website languages; volunteer, campaign, and organization names remain as entered. The coat of arms, Arabic font, and source/license notices are bundled with the backend for deployment. The frontend previews/downloads the received PDF using a temporary browser blob URL and releases it afterward, with a matching HTML preview for browsers without a PDF viewer. PDFs do not depend on persistent server storage.
-
-Cloudinary account configuration and deployment environment values must be supplied before deploying. No deployment is performed by the code changes.
-
-### Language and location
-
-The navbar switches between English and العربية. The browser remembers the language; English is the default. Arabic changes the interface to right-to-left across public pages and all dashboards. User-written names, descriptions, and review feedback are not automatically translated. API roles, categories, governorates, and statuses keep their English values. Display dates use the selected language with the Gregorian calendar and Bahrain time; stored dates and date-filter comparisons stay unchanged.
-
-Campaign and organization forms include an optional Leaflet map picker. Click the map, drag the pin, or pan with the keyboard and choose Use map center. Remove pin clears the selected coordinates. Campaigns can explicitly copy the organization's location, and subsequent changes remain independent. The written address is still required. Public and private details show a saved pin and Get directions; records without coordinates use the written address in Google Maps.
-
-Existing organization and campaign create/update/read endpoints accept and return optional numeric `latitude` and `longitude`. Supply both numbers together, omit both on update to preserve them, or send both as `null` to remove them. Existing records need no migration. There is no geocoding service, location permission prompt, or Google API key requirement.
-
-The shared WhatsApp contact link shows the phone number and redirect icon. Eight-digit Bahrain numbers receive the `973` prefix for the link; international numbers retain their country code.
-
-Maps use Leaflet 1.9.4 with OpenStreetMap tiles and visible attribution. Frontend `.env.example` documents optional `VITE_MAP_TILE_URL` and `VITE_MAP_ATTRIBUTION` overrides; change both together for a different tile provider. For deployment, follow the [OpenStreetMap tile policy](https://operations.osmfoundation.org/policies/tiles/): retain attribution and browser referrers, respect normal HTTP caching, and do not prefetch tiles or offer offline tile downloads. The public tile service has no availability guarantee; select a suitable provider if traffic grows. A map failure does not prevent saving the form's written address.
-
-### Mock development data
-
-The configured development database contains 12 demo accounts, 7 demo organizations, and 18 demo campaigns added on 16 September 2026. Existing records were preserved. This data is fictional and is not added automatically at server startup.
-
-Use username **`demo_tatawwu`** and password **`TatawwuDemo2026!`**, then choose **Admin**, **Organizer**, or **Volunteer** on the sign-in form. These are three separate accounts sharing a username and demo password.
-
-Other organizer usernames are `demo_muharraq`, `demo_southern`, `demo_northern`, `demo_pending`, `demo_rejected`, and `demo_removed`. Other volunteer usernames are `demo_omar`, `demo_noor`, and `demo_ali`. All use the same demo password above.
-
-The examples cover all four governorates, organization review statuses, campaign lifecycle statuses, upcoming and past activities, a full campaign, cancelled registrations, favorites, attendance, and a granted certificate. Upcoming dates run from 18 September to 3 October 2026. The main organizer owns the attendance and certificate examples; the main volunteer has participation history and a certificate to preview/download.
-
-Demo images use Cloudinary's public sample URL with empty public IDs. They demonstrate image display without requiring an upload or deleting the shared sample asset. Configure your own Cloudinary environment values to upload new images.
-
-### Implementation review
-
-Initial implementation verification completed on 16 September 2026:
-
-- Frontend: 46 automated tests passed; lint and the production build passed. Browser checks covered real role sign-in, discovery filters/pagination, participation, favorites, certificates, organizer participants, and admin review.
-- Backend: 157 live API requests passed 306 assertions across nine workflow sections. Eight additional mocked Cloudinary assertions and syntax checks for all 16 backend JavaScript files passed.
-- Fixes included role-based login redirects, preserving campaign images during text edits, handling image cleanup errors after successful saves, preventing simultaneous joins from overfilling a campaign, and showing missing organizations in admin review without crashing.
-- Temporary test files, temporary testing dependencies, and temporary database fixtures were removed after verification. Demo data remains. No Git commands were used.
-
-The Arabic/maps/certificate follow-up was also verified on 16 September 2026:
-
-- 31 frontend tests passed, including language persistence/RTL, all role sign-ins, English API enum values, filter collapse/pagination, WhatsApp links, map coordinates and tile-error recovery, and English certificate controls. Frontend lint and production build passed.
-- 48 backend API/helper checks passed for coordinate pairs, omitted values, clearing, older records, certificate eligibility/grants/revocation, and actual PDF responses. Tests used an isolated synthetic database; the configured application data was preserved.
-- Certificate renders were visually checked with English, Arabic, mixed-script, long, unbroken, and empty fields. Browser checks covered real Arabic pages, pin selection/dragging/removal, saved language, directions links, and the certificate preview.
-- All temporary test scripts, test dependencies, fixtures, and PDF inspection files were removed afterward. Packaged certificate artwork and fonts remain as application assets.
-
-Live Cloudinary upload success was not verified because credentials are not configured. Mocked provider success/failure and the actual multipart missing-configuration response were checked. PDF responses were generated by the real backend; the frontend also shows a styled English certificate preview alongside the PDF for browsers without an embedded PDF viewer.
+- [React](https://react.dev/), [React Router](https://reactrouter.com/), [Vite](https://vite.dev/), [Express](https://expressjs.com/), and [Mongoose](https://mongoosejs.com/) provide the application framework and database layer.
+- [Cloudinary](https://cloudinary.com/documentation/node_image_and_video_upload), [Multer](https://github.com/expressjs/multer), and [PDFKit](https://pdfkit.org/) provide uploads and generated certificates.
+- [Leaflet](https://leafletjs.com/) maps display tiles and geographic data attributed to [OpenStreetMap contributors](https://www.openstreetmap.org/copyright). Follow the tile policy linked above.
+- The [official Bahrain coat of arms](https://commons.wikimedia.org/wiki/File:Coat_of_Arms_of_The_Kingdom_of_Bahrain.svg) is credited to the Government of Bahrain; Commons marks the source CC0. Its PNG is bundled locally.
+- Certificate fonts are [Noto Sans and Noto Sans Arabic](https://fonts.google.com/noto) under the SIL Open Font License. Backend `assets/fonts/NotoSansArabic-LICENSE.txt` and `assets/certificates/SOURCES.txt` retain notices and source details.
+- UI fonts are Playfair Display, Lato, and Tajawal from [Google Fonts](https://fonts.google.com/), with local system fallbacks.
+- Organization imagery and homepage media were supplied with this project. The [demo artwork notes](https://github.com/ctarek2015-wq/tatawuu-frontend/blob/main/demo-import/README.md) identify the three generated replacements and reused logos. Their presence is demonstration content and does not imply endorsement. The team should confirm provenance/permission for the supplied logo/video before a public release.
 
 ### Future work
 
 - Volunteer badges and leaderboard.
 - Tracked volunteer hours and automatic certificates.
-- Admin user-management pages.
 
 ### Technical references
 

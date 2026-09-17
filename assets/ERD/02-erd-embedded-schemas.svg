@@ -1,52 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1430" viewBox="0 0 2000 1430">
-<title>Tatawwu Bahrain — project design specification</title>
-<rect width="100%" height="100%" fill="#ffffff"/>
-<rect x="65" y="60" width="10" height="56" rx="0" fill="#ff6b3d" stroke="none" stroke-width="1"/>
-<text x="96.00" y="101.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="42" font-weight="700" fill="#17242b">Campaign / favorites and certificates</text>
-<text x="98.00" y="148.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="21" font-weight="400" fill="#52636b">User references only · No standalone Favorite or Certificate model</text>
-<text x="1896.60" y="91.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" fill="#52636b">02</text>
-<polyline points="70,1368 1930,1368" fill="none" stroke="#c8d2d7" stroke-width="1" stroke-linejoin="round"/>
-<text x="70.00" y="1400.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#52636b">TATAWWU&#x27;  /  BAHRAIN  /  ENGLISH  /  MERN + JWT + CLOUDINARY</text>
-<text x="1652.36" y="1400.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="400" fill="#52636b">DESIGN SPECIFICATION · 13 SEP 2026</text>
-<rect x="80" y="240" width="1840" height="195.4" rx="3" fill="#d0f3e2" stroke="#52636b" stroke-width="1.5"/>
-<rect x="80" y="240" width="1840" height="54" rx="0" fill="#06c879" stroke="#52636b" stroke-width="1.5"/>
-<text x="885.57" y="277.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="25" font-weight="700" fill="#17242b">Campaign fields</text>
-<rect x="80" y="294" width="400" height="43" rx="0" fill="#53dca3" stroke="#52636b" stroke-width="1"/>
-<text x="92.00" y="324.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">Field</text>
-<rect x="480" y="294" width="340" height="43" rx="0" fill="#53dca3" stroke="#52636b" stroke-width="1"/>
-<text x="492.00" y="324.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">Type</text>
-<rect x="820" y="294" width="1100" height="43" rx="0" fill="#53dca3" stroke="#52636b" stroke-width="1"/>
-<text x="832.00" y="324.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="700" fill="#17242b">Options</text>
-<rect x="80" y="337" width="400" height="49.2" rx="0" fill="#d0f3e2" stroke="#52636b" stroke-width="1"/>
-<text x="92.00" y="369.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" fill="#17242b">favorites</text>
-<rect x="480" y="337" width="340" height="49.2" rx="0" fill="#d0f3e2" stroke="#52636b" stroke-width="1"/>
-<text x="492.00" y="369.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="400" fill="#17242b">[ObjectId]</text>
-<rect x="820" y="337" width="1100" height="49.2" rx="0" fill="#d0f3e2" stroke="#52636b" stroke-width="1"/>
-<text x="832.00" y="369.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="400" fill="#17242b">ref: User; default: []; one entry per volunteer; select: false</text>
-<rect x="80" y="386.2" width="400" height="49.2" rx="0" fill="#abe8cd" stroke="#52636b" stroke-width="1"/>
-<text x="92.00" y="418.20" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" fill="#17242b">certificates</text>
-<rect x="480" y="386.2" width="340" height="49.2" rx="0" fill="#abe8cd" stroke="#52636b" stroke-width="1"/>
-<text x="492.00" y="418.20" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="400" fill="#17242b">[ObjectId]</text>
-<rect x="820" y="386.2" width="1100" height="49.2" rx="0" fill="#abe8cd" stroke="#52636b" stroke-width="1"/>
-<text x="832.00" y="418.20" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="400" fill="#17242b">ref: User; default: []; one entry per volunteer; select: false</text>
-<rect x="80" y="550" width="900" height="261.2" rx="7" fill="#f1f5f6" stroke="#c4cfd4" stroke-width="1"/>
-<text x="100.00" y="591.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#17242b">FAVORITES</text>
-<text x="100.00" y="633.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">PUT /campaigns/:id</text>
-<text x="100.00" y="665.20" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">{ &quot;action&quot;: &quot;favorite&quot; }</text>
-<text x="100.00" y="697.40" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">{ &quot;action&quot;: &quot;unfavorite&quot; }</text>
-<text x="100.00" y="729.60" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b"></text>
-<text x="100.00" y="761.80" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">The API derives the volunteer ID from the verified JWT account. Only</text>
-<text x="100.00" y="794.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">volunteers can save approved campaigns.</text>
-<rect x="1020" y="550" width="900" height="261.2" rx="7" fill="#f1f5f6" stroke="#c4cfd4" stroke-width="1"/>
-<text x="1040.00" y="591.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#17242b">CERTIFICATES</text>
-<text x="1040.00" y="633.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">PUT /campaigns/:id</text>
-<text x="1040.00" y="665.20" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">{ &quot;action&quot;: &quot;grantCertificate&quot;, &quot;volunteerId&quot;: &quot;...&quot; }</text>
-<text x="1040.00" y="697.40" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">{ &quot;action&quot;: &quot;removeCertificate&quot;, &quot;volunteerId&quot;: &quot;...&quot; }</text>
-<text x="1040.00" y="729.60" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b"></text>
-<text x="1040.00" y="761.80" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">Only the owning organizer manages grants. Granting requires a completed</text>
-<text x="1040.00" y="794.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">campaign and an attended registration.</text>
-<rect x="80" y="1120" width="1840" height="132.39999999999998" rx="7" fill="#f1f5f6" stroke="#c4cfd4" stroke-width="1"/>
-<text x="100.00" y="1161.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" fill="#17242b">PERSONAL LISTS</text>
-<text x="100.00" y="1203.00" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">GET /campaigns/?favorites=me · GET /campaigns/?certificates=me</text>
-<text x="100.00" y="1235.20" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="400" fill="#52636b">Both requests require a volunteer JWT. Direct replacement of either array through campaign create/update is rejected.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1150" height="523" viewBox="0 0 1150 523" role="img" aria-labelledby="title">
+<title id="title">Tatawwu — embedded participation and locations</title>
+<rect width="100%" height="100%" fill="#f8f3e9"/>
+<g font-family="Arial, sans-serif" fill="#582337">
+<text x="35" y="55" font-size="28" font-weight="bold">Tatawwu — embedded participation and locations</text>
+<text x="35" y="105" font-size="19">Campaign.participants[] = { volunteerId, status, attendance }</text>
+<text x="35" y="147" font-size="19">status: Registered | Cancelled; attendance: Unmarked | Attended | Absent</text>
+<text x="35" y="189" font-size="19">One participant entry per volunteer. Cancellation retains it; rejoining reuses it.</text>
+<text x="35" y="231" font-size="19">registeredCount = number of Registered entries; availablePlaces = capacity - registeredCount</text>
+<text x="35" y="273" font-size="19">Campaign.favorites[] = Volunteer User IDs; Campaign.certificates[] = granted Volunteer IDs</text>
+<text x="35" y="315" font-size="19">Certificate eligibility: Completed campaign + Registered participant + Attended</text>
+<text x="35" y="357" font-size="19">Organization and Campaign locations: country BH, governorate, area, address, latitude, longitude</text>
+<text x="35" y="399" font-size="19">Coordinates are optional pairs: omit both to preserve; send both null to clear.</text>
+<text x="35" y="441" font-size="19">Dates are UTC in MongoDB; input/display uses Asia/Bahrain (UTC+03:00).</text>
+</g>
 </svg>

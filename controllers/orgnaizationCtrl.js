@@ -7,8 +7,8 @@ const removeLogo = async (publicId) => {
   if (!publicId) return;
   try {
     await cloudinary.uploader.destroy(publicId);
-  } catch (error) {
-    console.log("Could not remove organization logo:", error.message);
+  } catch {
+    return;
   }
 };
 
